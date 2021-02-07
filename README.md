@@ -7,3 +7,9 @@
 ## tests
 
 - dans `/reference-go/hello/hello.go` tester de remplacer import directement avec `../greetings` pour ne pas avoir a utiliser `remplace` dans `go.mod`
+
+- got-lint
+
+- docker golang
+
+- auto-build gitlab
