@@ -3,3 +3,7 @@
 - [reddit](https://www.reddit.com/r/golang/)
 - [fedora](https://fedoramagazine.org/getting-started-with-go-on-fedora/)
 - [packages](https://pkg.go.dev/)
+
+## tests
+
+- dans `/reference-go/hello/hello.go` tester de remplacer import directement avec `../greetings` pour ne pas avoir a utiliser `remplace` dans `go.mod`
