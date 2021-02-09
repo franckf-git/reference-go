@@ -3,6 +3,8 @@
 - [reddit](https://www.reddit.com/r/golang/)
 - [fedora](https://fedoramagazine.org/getting-started-with-go-on-fedora/)
 - [packages](https://pkg.go.dev/)
+- [gitlab-ci](https://blog.boatswain.io/post/build-go-project-with-gitlab-ci/)
+- [awesome-go](https://github.com/avelino/awesome-go)
 
 ## tests
 
