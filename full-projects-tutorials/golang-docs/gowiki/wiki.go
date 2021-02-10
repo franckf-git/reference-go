@@ -17,6 +17,7 @@ type Page struct {
 }
 
 func (p *Page) save() error {
+    // TODO handle empty field - /edit/ create ".txt"
 	filename := p.Title + ".txt"
 	return ioutil.WriteFile(filename, p.Body, 0600)
 }
@@ -61,14 +62,10 @@ func saveHandler(w http.ResponseWriter, r *http.Request) {
     http.Redirect(w, r, "/view/"+title, http.StatusFound)
 }
 
+var templates = template.Must(template.ParseFiles("edit.html", "view.html"))
+
 func renderTemplate(w http.ResponseWriter, tmpl string, p *Page) {
-    // TODO handle empty field - /edit/ create ".txt"
-    t, err := template.ParseFiles(tmpl + ".html")
-    if err != nil {
-        http.Error(w, err.Error(), http.StatusInternalServerError)
-        return
-    }
-    err = t.Execute(w, p)
+    err := templates.ExecuteTemplate(w, tmpl+".html", p)
     if err != nil {
         http.Error(w, err.Error(), http.StatusInternalServerError)
     }
