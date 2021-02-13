@@ -6,6 +6,7 @@ import (
 
 	"example.com/greetings"
 	"example.com/user/hello/morestrings"
+	"github.com/google/go-cmp/cmp"
 )
 
 func main() {
@@ -29,4 +30,5 @@ func main() {
 
 	fmt.Println(morestrings.ReverseRunes("!oG ,olleH"))
 
+	fmt.Println(cmp.Diff("Hello World", "Hello Go"))
 }
