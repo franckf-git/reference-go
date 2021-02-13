@@ -5,6 +5,7 @@ import (
 	"log"
 
 	"example.com/greetings"
+	"example.com/user/hello/morestrings"
 )
 
 func main() {
@@ -25,4 +26,7 @@ func main() {
 	// If no error was returned, print the returned map of
 	// messages to the console.
 	fmt.Println(messages)
+
+	fmt.Println(morestrings.ReverseRunes("!oG ,olleH"))
+
 }
