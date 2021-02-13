@@ -5,6 +5,7 @@
 - [packages](https://pkg.go.dev/)
 - [gitlab-ci](https://blog.boatswain.io/post/build-go-project-with-gitlab-ci/)
 - [awesome-go](https://github.com/avelino/awesome-go)
+- [packages](https://pkg.go.dev/)
 
 ## tests
 
