@@ -17,3 +17,17 @@
 - docker golang
 
 - auto-build gitlab
+
+# blog archives
+
+https://blog.golang.org/docker
+https://blog.golang.org/examples
+https://blog.golang.org/first-go-program
+https://blog.golang.org/generate
+https://blog.golang.org/go1.13-errors
+https://blog.golang.org/godoc
+https://blog.golang.org/h2push
+https://blog.golang.org/json
+https://blog.golang.org/maps
+https://blog.golang.org/slices
+
