@@ -15,7 +15,8 @@
 
 - got-lint
 
-- docker golang
+- docker golang ok - tester en faisant un build avant, pour avoir la + petite image
+possible à la fin (qui n'exécute que le binaire)
 
 - auto-build gitlab
 
