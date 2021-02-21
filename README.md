@@ -7,6 +7,7 @@
 - [awesome-go](https://github.com/avelino/awesome-go)
 - [packages](https://pkg.go.dev/)
 - [case studies & use cases](https://go.dev/solutions#case-studies)
+- [gitlab guidelines](https://docs.gitlab.com/ee/development/go_guide/)
 
 ## tests
 
