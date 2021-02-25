@@ -41,4 +41,5 @@ https://blog.golang.org/maps
 https://blog.golang.org/organizing-go-code
 https://blog.golang.org/slices
 https://blog.golang.org/slices-intro
+https://blog.golang.org/context-and-structs
 
