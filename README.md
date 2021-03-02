@@ -1,4 +1,5 @@
 - [documentation](https://golang.org/doc/)
+- [best-practices](https://golang.org/doc/effective_go)
 - [go tour](https://tour.golang.org/welcome/1)
 - [reddit](https://www.reddit.com/r/golang/)
 - [fedora](https://fedoramagazine.org/getting-started-with-go-on-fedora/)
