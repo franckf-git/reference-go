@@ -5,10 +5,19 @@ import (
 	"testing"
 )
 
-func TestFB(t *testing.T) {
-	result := "z"
+func TestFB2(t *testing.T) {
+	result := "1 2"
 	want := regexp.MustCompile(result)
-	msg := Fizzbuzz()
+	msg := Fizzbuzz(2)
+	if !want.MatchString(msg) {
+		t.Fatalf(`Fizzbuzz give us : %q - and we want %v`, msg, want)
+	}
+}
+
+func TestFB16(t *testing.T) {
+	result := "1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz 13 14 FizzBuzz 16"
+	want := regexp.MustCompile(result)
+	msg := Fizzbuzz(16)
 	if !want.MatchString(msg) {
 		t.Fatalf(`Fizzbuzz give us : %q - and we want %v`, msg, want)
 	}
