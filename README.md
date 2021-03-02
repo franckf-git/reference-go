@@ -15,9 +15,6 @@
 
 - got-lint
 
-- docker golang ok - tester en faisant un build avant, pour avoir la + petite image
-possible à la fin (qui n'exécute que le binaire)
-
 - auto-build gitlab
 
 # blog archives
@@ -42,4 +39,3 @@ https://blog.golang.org/organizing-go-code
 https://blog.golang.org/slices
 https://blog.golang.org/slices-intro
 https://blog.golang.org/context-and-structs
-
