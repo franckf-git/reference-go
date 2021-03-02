@@ -15,7 +15,9 @@ func Fizzbuzz(number int) string {
 		} else {
 			output += fmt.Sprint(i)
 		}
-		output += " "
+		if i != number {
+			output += " "
+		}
 	}
 	return output
 }

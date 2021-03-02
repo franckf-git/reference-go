@@ -6,7 +6,7 @@ import (
 )
 
 func TestFB2(t *testing.T) {
-	want := "1 2 "
+	want := "1 2"
 	msg := Fizzbuzz(2)
 	if want != msg {
 		t.Fatalf(`Fizzbuzz give us : %q - and we want %v`, msg, want)
