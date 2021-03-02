@@ -6,7 +6,7 @@ import (
 )
 
 func TestFB(t *testing.T) {
-	result := "3"
+	result := "z"
 	want := regexp.MustCompile(result)
 	msg := Fizzbuzz()
 	if !want.MatchString(msg) {
