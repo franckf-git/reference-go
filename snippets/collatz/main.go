@@ -13,11 +13,18 @@ func ProcessNum(number int) int {
 
 // CollatzProcess process a number until nothing is left
 func CollatzProcess(number int) []int {
-	res := []int{1, 2, 3}
-	return res
+	result := []int{}
+	entryPoint := []int{number}
+	result = append(result, entryPoint...)
+	for result[len(result)-1] > 1 {
+		numberProcessed := ProcessNum(result[len(result)-1])
+		newEntry := []int{numberProcessed}
+		result = append(result, newEntry...)
+	}
+	return result
 }
 
 func main() {
-	result := CollatzProcess(16)
+	result := CollatzProcess(17)
 	fmt.Print(result)
 }
