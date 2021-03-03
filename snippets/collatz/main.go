@@ -6,9 +6,9 @@ import "fmt"
 func ProcessNum(number int) int {
 	if number%2 == 0 {
 		return number / 2
-	} else {
-		return (number * 3) + 1
 	}
+	return (number * 3) + 1
+
 }
 
 // CollatzProcess process a number until nothing is left
