@@ -16,6 +16,8 @@
 
 - got-lint
 
+- go generate / go fix : pour generer du code compatible ?
+
 - auto-build gitlab
 
 # blog archives
