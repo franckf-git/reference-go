@@ -14,7 +14,10 @@
 
 - dans `/reference-go/hello/hello.go` tester de remplacer import directement avec `../greetings` pour ne pas avoir a utiliser `remplace` dans `go.mod`
 
-- got-lint
+- go-lint : il me semble y avoir d'option intégrée, tester avec le binaire
+
+- tester la modification d'un slice/maps, avec et sans pointer dans une fonction pour confirmer l'immutabilité
+> pour clarifier "If you pass a map to a function that changes the contents of the map, the changes will be visible in the caller."
 
 - go generate / go fix : pour generer du code compatible ?
 
