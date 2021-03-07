@@ -16,3 +16,7 @@ run:
 clean:
     go clean
     rm ${BINARY_NAME}
+
+install: # to test
+	make run
+	cp ${BINARY_NAME} ~/.local/bin
