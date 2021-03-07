@@ -23,6 +23,16 @@
 
 - auto-build gitlab
 
+- append : pas besoin d'un nouvel element `newEntry`
+```
+x := []int{1,2,3}
+x = append(x, 4, 5, 6)
+// vs
+x := []int{1,2,3}
+y := []int{4,5,6}
+x = append(x, y...)
+```
+
 # blog archives
 
 https://golang.org/doc/faq
