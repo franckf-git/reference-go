@@ -1,12 +1,20 @@
-// top
-
 package kata
 
+import "strings"
+
 func RemoveChar(word string) string {
-	return word[1 : len(word)-1]
+  wordarr := strings.Split(word, "")
+  result := []string{}
+  for key,value := range wordarr {
+    if key != 0 && key != len(wordarr)-1 {
+      newEntry := []string{value}
+      result = append(result, newEntry...)
+    }
+  }
+  return strings.Join(result, "")
 }
 
-// ---
+// top
 
 package kata
 
