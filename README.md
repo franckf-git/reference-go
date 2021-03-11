@@ -9,6 +9,10 @@
 - [packages](https://pkg.go.dev/)
 - [case studies & use cases](https://go.dev/solutions#case-studies)
 - [gitlab guidelines](https://docs.gitlab.com/ee/development/go_guide/)
+- [oscon](https://spf13.com/presentation/building-an-awesome-cli-app-in-go-oscon/)
+- [gophercises](https://gophercises.com/)
+- [learn-with-tests](https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/install-go#go-environment)
+- [learn-to-code](https://github.com/ashleymcnamara/learn_to_code#golang)
 
 ## tests
 
