@@ -1,0 +1,17 @@
+<!-- layout.html -->
+<html>
+    <head>
+        <title>{{block "title"}}Default page title{{end}}</title>
+
+        <script src="app.js"></script>
+        {{block "additional_scripts"}}{{end}}
+    </head>
+    <body>
+        <div class="navbar">...</div>
+        <div class="content">
+            {{block "content" .}}
+                <!-- Fallback, if "content" is not defined elsewhere -->
+            {{end}}
+        </div>
+    </body>
+</html>
