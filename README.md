@@ -1,14 +1,14 @@
 - [documentation](https://golang.org/doc/)
-- [best-practices](https://golang.org/doc/effective_go)
 - [go tour](https://tour.golang.org/welcome/1)
-- [reddit](https://www.reddit.com/r/golang/)
-- [fedora](https://fedoramagazine.org/getting-started-with-go-on-fedora/)
 - [packages](https://pkg.go.dev/)
-- [gitlab-ci](https://blog.boatswain.io/post/build-go-project-with-gitlab-ci/)
 - [awesome-go](https://github.com/avelino/awesome-go)
-- [packages](https://pkg.go.dev/)
-- [case studies & use cases](https://go.dev/solutions#case-studies)
+
+- [best-practices](https://golang.org/doc/effective_go)
 - [gitlab guidelines](https://docs.gitlab.com/ee/development/go_guide/)
+
+- [gitlab-ci](https://blog.boatswain.io/post/build-go-project-with-gitlab-ci/)
+- [case studies & use cases](https://go.dev/solutions#case-studies)
+
 - [oscon](https://spf13.com/presentation/building-an-awesome-cli-app-in-go-oscon/)
 - [gophercises](https://gophercises.com/)
 - [learn-with-tests](https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/install-go#go-environment)
