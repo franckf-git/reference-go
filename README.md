@@ -37,6 +37,12 @@ y := []int{4,5,6}
 x = append(x, y...)
 ```
 
+- godocs
+```
+godoc golang-book/chapter11/math Average
+godoc -http=":6060"
+```
+
 # blog archives
 
 https://golang.org/doc/faq
