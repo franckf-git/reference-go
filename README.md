@@ -1,3 +1,4 @@
+- [intro go](http://www.golang-book.com/books/intro)
 - [documentation](https://golang.org/doc/)
 - [go tour](https://tour.golang.org/welcome/1)
 - [packages](https://pkg.go.dev/)
