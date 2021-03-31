@@ -21,4 +21,8 @@ func main() {
 	// les deux premiers
 	fmt.Print(string(abc[:2]))
 	fmt.Print("\n")
+	// au centre cde
+	fmt.Print(string(abc[2:5]))
+	fmt.Print("\n")
 }
+
