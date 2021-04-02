@@ -14,6 +14,7 @@
 - [gophercises](https://gophercises.com/)
 - [learn-with-tests](https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/install-go#go-environment)
 - [learn-to-code](https://github.com/ashleymcnamara/learn_to_code#golang)
+- [gowebexamples](https://gowebexamples.com/)
 
 ## tests
 
