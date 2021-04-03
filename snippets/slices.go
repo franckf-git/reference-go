@@ -41,6 +41,8 @@ func main() {
 	//v := []int{}
 	_ = append(s5[:3], s5[4:]...) // remove 3rd elem
 	fmt.Println(s5)
+    // This statement drops the first and last elements of our slice:
+    slice = slice[1:len(slice)-1]
 
 	// Passing slice to a function
 	s6 := []int{1, 2, 3, 4, 5, 6, 7, 8}
