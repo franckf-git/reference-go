@@ -29,16 +29,6 @@
 
 - auto-build gitlab
 
-- append : pas besoin d'un nouvel element `newEntry`
-```
-x := []int{1,2,3}
-x = append(x, 4, 5, 6)
-// vs
-x := []int{1,2,3}
-y := []int{4,5,6}
-x = append(x, y...)
-```
-
 - godocs
 ```
 godoc golang-book/chapter11/math Average
@@ -50,7 +40,6 @@ godoc -http=":6060"
 # blog archives
 
 https://golang.org/doc/faq
-https://golang.org/doc/modules/managing-dependencies
 https://blog.golang.org/concurrency-timeouts
 https://blog.golang.org/declaration-syntax
 https://blog.golang.org/defer-panic-and-recover

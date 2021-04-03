@@ -54,6 +54,10 @@ func main() {
 	// append function
 	s7 = append(s7, 9, 10)
 	fmt.Println(s7) // [1 2 3 4 5 6 7 8 9 10]
+    // append two slices
+    x := []int{1,2,3}
+    y := []int{4,5,6}
+    x = append(x, y...)
 	// copy function
 	ne := copy(s7b, s7)  // returns number of elements copied
 	fmt.Println(s7b, ne) // [1 2 3 4 5] 5
