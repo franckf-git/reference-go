@@ -57,7 +57,6 @@ https://blog.golang.org/defer-panic-and-recover
 https://blog.golang.org/docker
 https://blog.golang.org/error-handling-and-go
 https://blog.golang.org/examples
-https://blog.golang.org/first-go-program
 https://blog.golang.org/generate
 https://blog.golang.org/gif-decoder
 https://blog.golang.org/go1.13-errors
@@ -66,6 +65,4 @@ https://blog.golang.org/h2push
 https://blog.golang.org/json
 https://blog.golang.org/maps
 https://blog.golang.org/organizing-go-code
-https://blog.golang.org/slices
-https://blog.golang.org/slices-intro
 https://blog.golang.org/context-and-structs
