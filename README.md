@@ -6,6 +6,7 @@
 
 - [best-practices](https://golang.org/doc/effective_go)
 - [gitlab guidelines](https://docs.gitlab.com/ee/development/go_guide/)
+- [code-review](https://github.com/golang/go/wiki/CodeReviewComments)
 
 - [gitlab-ci](https://blog.boatswain.io/post/build-go-project-with-gitlab-ci/)
 - [case studies & use cases](https://go.dev/solutions#case-studies)
@@ -39,19 +40,15 @@ godoc -http=":6060"
 
 # blog archives
 
-https://golang.org/doc/faq
-https://blog.golang.org/concurrency-timeouts
-https://blog.golang.org/declaration-syntax
-https://blog.golang.org/defer-panic-and-recover
-https://blog.golang.org/docker
-https://blog.golang.org/error-handling-and-go
-https://blog.golang.org/examples
-https://blog.golang.org/generate
-https://blog.golang.org/gif-decoder
-https://blog.golang.org/go1.13-errors
-https://blog.golang.org/godoc
-https://blog.golang.org/h2push
-https://blog.golang.org/json
-https://blog.golang.org/maps
-https://blog.golang.org/organizing-go-code
-https://blog.golang.org/context-and-structs
+https://blog.golang.org/concurrency-timeouts  
+https://blog.golang.org/declaration-syntax  
+https://blog.golang.org/defer-panic-and-recover  
+https://blog.golang.org/docker  
+https://blog.golang.org/error-handling-and-go  
+https://blog.golang.org/generate  
+https://blog.golang.org/gif-decoder  
+https://blog.golang.org/go1.13-errors  
+https://blog.golang.org/godoc  
+https://blog.golang.org/h2push  
+https://blog.golang.org/organizing-go-code  
+https://blog.golang.org/context-and-structs  
