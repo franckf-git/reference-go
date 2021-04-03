@@ -38,6 +38,8 @@ godoc -http=":6060"
 
 - go test : comment chercher/lancer les tests dans les sous-dossiers
 
+- reduire le poid : `A Go program compiled with gc can be linked with the -ldflags=-w flag to disable DWARF generation, removing debugging information from the binary but with no other loss of functionality. This can reduce the binary size substantially.`
+
 # blog archives
 
 https://blog.golang.org/concurrency-timeouts  
