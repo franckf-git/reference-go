@@ -8,8 +8,7 @@
 - [gitlab guidelines](https://docs.gitlab.com/ee/development/go_guide/)
 - [code-review](https://github.com/golang/go/wiki/CodeReviewComments)
 
-- [gitlab-ci](https://blog.boatswain.io/post/build-go-project-with-gitlab-ci/)
-- [case studies & use cases](https://go.dev/solutions#case-studies)
+- [case studies](https://go.dev/solutions#case-studies)
 
 - [oscon](https://spf13.com/presentation/building-an-awesome-cli-app-in-go-oscon/)
 - [gophercises](https://gophercises.com/)
@@ -18,8 +17,6 @@
 - [gowebexamples](https://gowebexamples.com/)
 
 ## tests
-
-- paquets : comment mettre plusieurs packets dans un même dossier (ex. utils)
 
 - go-lint : il ne semble pas y avoir d'option intégrée, tester avec le binaire
 
