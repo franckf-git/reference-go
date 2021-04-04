@@ -38,6 +38,8 @@ godoc -http=":6060"
 
 - go test : comment chercher/lancer les tests dans les sous-dossiers
 
+- rangement lien symbolic de dossier dans GOPATH
+
 # blog archives
 
 https://blog.golang.org/concurrency-timeouts  
