@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>URLSH | Shorten a long and complex URL</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.2/css/all.min.css">
+  <style>
+    .icon .fas.is-left {
+      height: 0.45em;
+      width: 0.45em;
+      font-size: 1.5em;
+    }
+    .table {
+      width: 100%;
+    }
+    .th-code {
+      width: 10%;
+    }
+    .th-url {
+      width: 90%;
+    }
+  </style>
+</head>
+<body>
+<div class="container is-fluid xhas-text-centered">
+  <div class="hero">
+    <div class="hero-body">
+      <h1 class="title">Shorten a long URL</h1>
+      <form id="url-form" method="POST" onsubmit="return shortenUrl()">
+        <div class="field">
+          <div class="control has-icons-left">
+            <span class="icon"><i class="fas fa-link is-left"></i></span>
+            <input class="input is-danger is-medium" id="long" type="url" required="required" placeholder="Long URL here" name="url" autocomplete="off">
+          </div>
+          <p class="help is-danger">URL is required, only ftp and http(s) supported</p>
+        </div>
+
+        <div class="field">
+          <div class="control has-icons-left">
+            <span class="icon"><i class="fas fa-tags is-left"></i></span>
+            <input class="input is-success is-medium" type="text" placeholder="CSV keywords here" name="keywords">
+          </div>
+          <p class="help is-success">Keywords are optional, if provided can be used to search</p>
+        </div>
+
+        <div class="field">
+          <div class="control has-icons-left">
+            <span class="icon"><i class="fas fa-calendar is-left"></i></span>
+            <input class="input is-info is-medium" type="date" name="expires_on">
+          </div>
+          <p class="help is-info">Expiry date is optional, if provided short URLs expire on that date</p>
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <button id="button" class="button is-primary">Shorten</button>
+            <button id="copy" class="button is-success is-hidden" onclick="return copyShortUrl()">
+              Copy Short URL
+            </button>
+          </div>
+          <p class="help is-medium" id="info">&nbsp;</p>
+        </div>
+      </form>
+      <h4 class="subtitle">
+        Source code: <a target="_blank" href="https://github.com/adhocore/urlsh">adhocore/urlsh</a>
+      </h4>
+      <hr>
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="th-code">Short URL</th>
+            <th class="th-url">Origin URL</th>
+          </tr>
+        </thead>
+        <tbody id="history">
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<script>
+const form = document.getElementById('url-form')
+const butn = document.getElementById('button')
+const info = document.getElementById('info')
+const copy = document.getElementById('copy')
+const hist = document.getElementById('history')
+
+function shortenUrl() {
+  if (butn.classList.contains('is-loading')) return false
+
+  const formData = new FormData(form)
+  const payload = {
+    url: formData.get('url'),
+    keywords: formData.get('keywords') ? formData.get('keywords').split(',').map(k => k.trim()) : [],
+    expires_on: formData.get('expires_on') ? `${formData.get('expires_on')} 23:59:59` : '',
+  }
+
+  butn.classList.add('is-loading')
+
+  fetch('/api/urls', {body: JSON.stringify(payload), method: 'POST', headers: {'Accept': 'application/json'}})
+    .then(res => res.json())
+    .then(data => renderResponse({...data, url: payload.url}))
+    .catch(_ => info.innerText = 'unknown error')
+
+  return false
+}
+
+function copyShortUrl() {
+  navigator.clipboard.writeText(copy.dataset.shortUrl).then(_ => {
+    copy.innerText = 'Copied'
+    setTimeout(_ => copy.classList.add('is-hidden'), 1500)
+  })
+
+  return false
+}
+
+function renderResponse(data) {
+  butn.classList.remove('is-loading')
+  info.classList.remove('is-danger', 'is-success', 'is-info')
+  info.classList.add({200: 'is-primary', 409: 'is-info'}[data.status] || 'is-danger')
+
+  if (!data.short_code) {
+    info.innerText = data.message || 'unknown error'
+
+    return
+  }
+
+  const shortUrl = `${document.location.protocol}//${document.location.host}/${data.short_code}`
+
+  info.innerHTML = '&nbsp;'
+  copy.innerText = `Copy ${document.location.host}/${data.short_code}`
+  copy.classList.remove('is-hidden')
+  copy.dataset.shortUrl = shortUrl
+
+  form.reset()
+
+  if (localStorage[data.short_code]) return
+
+  localStorage[data.short_code] = data.url
+  localStorage['__'] = (data.short_code + ' ' + (localStorage['__'] || '')).trim()
+
+  setTimeout(_ => renderHistory(data.short_code, data.url, 0), 100)
+}
+
+function renderHistory(code, url, idx) {
+  const row  = hist.insertRow(idx)
+  const col1 = row.insertCell()
+  const col2 = row.insertCell()
+  const link = document.createElement('a')
+  const trnk = url.length > 150 ? url.substring(0, 150) + '...' : url
+
+  row.id    = code
+  link.href = link.title = url
+
+  link.setAttribute('target', '_blank')
+  link.appendChild(document.createTextNode(code))
+  col1.appendChild(link)
+  col2.appendChild(document.createTextNode(trnk))
+}
+
+function loadHistory() {
+  if (!localStorage['__']) return
+
+  for (const code of localStorage['__'].split(' ')) {
+    if (!localStorage[code]) continue
+    renderHistory(code, localStorage[code], -1)
+  }
+}
+
+setTimeout(loadHistory, 500)
+</script>
+</body>
+</html>
