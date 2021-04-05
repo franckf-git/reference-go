@@ -26,17 +26,10 @@
 
 - auto-build gitlab
 
-- godocs
-
-```
-godoc golang-book/chapter11/math Average
-godoc -http=":6060"
-```
-
 - go test : comment chercher/lancer les tests dans les sous-dossiers
 
 - rangement lien symbolic de dossier dans GOPATH
-`ln -s ~/.go/src/gitlab.com/franckf/reference-go/ ~/mydevfolder/`
+  `ln -s ~/.go/src/gitlab.com/franckf/reference-go/ ~/mydevfolder/`
 
 # blog archives
 
