@@ -8,12 +8,6 @@
 - [gitlab guidelines](https://docs.gitlab.com/ee/development/go_guide/)
 - [code-review](https://github.com/golang/go/wiki/CodeReviewComments)
 
-- [case studies](https://go.dev/solutions#case-studies)
-
-- [gophercises](https://gophercises.com/)
-- [learn-with-tests](https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/install-go#go-environment)
-- [gowebexamples](https://gowebexamples.com/)
-
 ## tests
 
 - go-lint : il ne semble pas y avoir d'option intégrée, tester avec le binaire
