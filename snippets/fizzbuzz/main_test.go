@@ -21,3 +21,11 @@ func TestFB16(t *testing.T) {
 		t.Fatalf(`Fizzbuzz give us : %q - and we want %v`, msg, want)
 	}
 }
+
+func BenchmarkFizz(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		Fizzbuzz(16)
+	}
+}
+
+// go test -bench=.

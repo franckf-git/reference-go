@@ -9,3 +9,11 @@ func TestAverage(t *testing.T) {
 		t.Error("Expected 1.5, got ", v)
 	}
 }
+
+func BenchmarkAverage(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		Average([]float64{1, 2})
+	}
+}
+
+// go test -bench=.
