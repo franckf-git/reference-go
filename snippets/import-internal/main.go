@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"gitlab.com/franckf/import-internal/utils"
+	"gitlab.com/franckf/reference-go/snippets/import-internal/utils"
 )
 
 func main() {
