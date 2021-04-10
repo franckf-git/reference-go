@@ -25,6 +25,16 @@
 - rangement lien symbolic de dossier dans GOPATH
   `ln -s ~/.go/src/gitlab.com/franckf/reference-go/ ~/mydevfolder/`
 
+- refacto in test
+```
+    checkSums := func(t testing.TB, got, want []int) {
+        t.Helper()
+        if !reflect.DeepEqual(got, want) {
+            t.Errorf("got %v want %v", got, want)
+        }
+    }
+```
+
 # blog archives
 
 https://blog.golang.org/concurrency-timeouts  
