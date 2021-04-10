@@ -11,6 +11,10 @@ build:
 test:
 	go test -v
 
+.PHONY: cover
+cover:
+	go test -cover
+
 .PHONY: exporttest
 exporttest:
 	GO111MODULE=on go test -v -race -coverprofile=cover.out -covermode=atomic ./...
