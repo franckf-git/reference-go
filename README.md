@@ -47,3 +47,23 @@ https://blog.golang.org/godoc
 https://blog.golang.org/h2push  
 https://blog.golang.org/organizing-go-code  
 https://blog.golang.org/context-and-structs
+
+## concurrency
+
+https://www.youtube.com/c/vilito-exquisitus/playlists
+
+https://www.golangprograms.com/go-language/concurrency.html
+
+https://blog.john-pfeiffer.com/golang-concurrency-goroutines-and-channels/
+
+https://betterprogramming.pub/common-go-pitfalls-a92197cd96d2
+
+## project structure
+
+https://peter.bourgon.org/go-best-practices-2016/#repository-structure
+
+https://medium.com/@benbjohnson/standard-package-layout-7cdbc8391fc1
+
+https://rakyll.org/style-packages/
+
+https://www.youtube.com/watch?v=oL6JBUk6tj0
