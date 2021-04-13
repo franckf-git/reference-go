@@ -20,3 +20,5 @@ func main() {
 	fmt.Printf("t:  %v\n", t)  // Copy whatever p is referencing to t's own spot in memory
 	fmt.Printf("&t: %v\n", &t)
 }
+
+// + Go copies values when you pass them to functions/methods so if you're writing a function that needs to mutate state you'll need it to take a pointer to the thing you want to change.
