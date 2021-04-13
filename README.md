@@ -21,10 +21,7 @@
 
 - auto-build gitlab
 
-- go test : comment chercher/lancer les tests dans les sous-dossiers
-
-- rangement lien symbolic de dossier dans GOPATH
-  `ln -s ~/.go/src/gitlab.com/franckf/reference-go/ ~/mydevfolder/`
+- go test : comment chercher/lancer les tests dans les sous-dossiers `./...` ?
 
 - refacto in test
 ```
