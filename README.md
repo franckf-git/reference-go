@@ -11,8 +11,6 @@
 
 ## tests
 
-- go-lint : il ne semble pas y avoir d'option intégrée, tester avec le binaire
-
 - tester la modification d'un slice/maps, avec et sans pointer dans une fonction pour confirmer l'immutabilité
 
   > pour clarifier "If you pass a map to a function that changes the contents of the map, the changes will be visible in the caller."
