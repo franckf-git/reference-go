@@ -11,6 +11,8 @@
 
 ## tests
 
+- *http.ListenAndServe(":5000"...) takes a port to listen on a Handler* : on peut donc avoir plusieurs ports avec plusieurs handler dans un seul program ?
+
 - tester la modification d'un slice/maps, avec et sans pointer dans une fonction pour confirmer l'immutabilité
 
   > pour clarifier "If you pass a map to a function that changes the contents of the map, the changes will be visible in the caller."
