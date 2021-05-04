@@ -1,5 +1,7 @@
 - [intro go](http://www.golang-book.com/books/intro)
 - [documentation](https://golang.org/doc/)
+- [go with tests](https://quii.gitbook.io/learn-go-with-tests/)
+
 - [go tour](https://tour.golang.org/welcome/1)
 - [packages](https://pkg.go.dev/)
 - [awesome-go](https://github.com/avelino/awesome-go)
