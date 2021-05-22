@@ -53,7 +53,8 @@ https://blog.golang.org/go1.13-errors
 https://blog.golang.org/godoc  
 https://blog.golang.org/h2push  
 https://blog.golang.org/organizing-go-code  
-https://blog.golang.org/context-and-structs
+https://blog.golang.org/context-and-structs--
+https://www.alexedwards.net/blog/organising-database-access--
 
 ## concurrency
 
