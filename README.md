@@ -11,6 +11,7 @@
 - [gitlab guidelines](https://docs.gitlab.com/ee/development/go_guide/)
 - [code-review](https://github.com/golang/go/wiki/CodeReviewComments)
 - [effective-go](https://golang.org/doc/effective_go)
+- [common-mistakes](http://devs.cloudimmunity.com/gotchas-and-common-mistakes-in-go-golang/index.html)
 
 ## tests
 
