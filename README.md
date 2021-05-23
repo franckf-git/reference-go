@@ -55,6 +55,9 @@ https://blog.golang.org/h2push
 https://blog.golang.org/organizing-go-code  
 https://blog.golang.org/context-and-structs--
 https://www.alexedwards.net/blog/organising-database-access--
+https://www.calhoun.io/using-mvc-to-structure-go-web-applications/--
+https://www.calhoun.io/lets-learn-algorithms--
+https://www.calhoun.io/using-postgresql-with-go--
 
 ## concurrency
 
@@ -74,4 +77,3 @@ https://medium.com/@benbjohnson/standard-package-layout-7cdbc8391fc1
 
 https://rakyll.org/style-packages/
 
-https://www.youtube.com/watch?v=oL6JBUk6tj0
