@@ -1,26 +1,28 @@
 package main
 
 import (
-	"fmt"
-	"os"
+    "fmt"
+    "os"
 )
 
 func main() {
-	f, err := os.Create("test.txt")
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-	l, err := f.WriteString("Hello World")
-	if err != nil {
-		fmt.Println(err)
-		f.Close()
-		return
-	}
-	fmt.Println(l, "bytes written successfully")
-	err = f.Close()
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
+
+  // create the file
+  f, err := os.Create("test.txt")
+  if err != nil {
+    fmt.Println(err)
+  }
+  // close the file with defer
+  defer f.Close()
+
+  // do operations
+
+  //write directly into file
+  f.Write([]byte("a string"))
+
+  // write a string
+  f.WriteString("\nThis is a pretty long string")
+
+  // // write from a specific offset
+  f.WriteAt([]byte("another string"), 42)     // 12 is the offset from start
 }
