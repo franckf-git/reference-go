@@ -39,8 +39,6 @@
 
 - https://github.com/stretchr/testify
 
-- argument d'une func par defaut (si possible) ?
-
 # blog archives
 
 https://blog.golang.org/concurrency-timeouts  
