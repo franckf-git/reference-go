@@ -65,7 +65,6 @@ https://sayedalesawy.hashnode.dev/top-5-lessons-i-learned-while-working-with-go-
 
 https://www.youtube.com/c/vilito-exquisitus/playlists  
 https://blog.john-pfeiffer.com/golang-concurrency-goroutines-and-channels  
-https://betterprogramming.pub/common-go-pitfalls-a92197cd96d2  
 
 ## project structure
 
