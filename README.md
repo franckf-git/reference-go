@@ -64,7 +64,6 @@ https://sayedalesawy.hashnode.dev/top-5-lessons-i-learned-while-working-with-go-
 ## concurrency
 
 https://www.youtube.com/c/vilito-exquisitus/playlists  
-https://www.golangprograms.com/go-language/concurrency.html  
 https://blog.john-pfeiffer.com/golang-concurrency-goroutines-and-channels  
 https://betterprogramming.pub/common-go-pitfalls-a92197cd96d2  
 
