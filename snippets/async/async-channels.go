@@ -1,18 +1,15 @@
-// dont work yet
-
 package main
 
 import (
 	"fmt"
-	//"math/rand"
+	"math/rand"
 	"time"
 )
 
 func funcwhotakesometime(value string, c chan string) {
-	//random := rand.Intn(7-1) + 1
-	//time.Sleep(time.Duration(random) * time.Second)
+	random := rand.Intn(7-1) + 1
+	time.Sleep(time.Duration(random) * time.Second)
 
-	time.Sleep(2 * time.Second)
 	fmt.Println("end at:", time.Now().Unix())
 	c <- value
 }
@@ -27,9 +24,14 @@ func main() {
 		go funcwhotakesometime(v, c)
 
 	}
-	returnchannel := ""
-	returnchannel <- c
-	fmt.Println(returnchannel)
+
+	// obligé de faire une boucle pour avoir tous les messages (sinon on a que le dernier
+	result := make([]string, len(listcmd))
+	for i, _ := range result {
+		result[i] = <-c
+		fmt.Println(result[i])
+	}
+
 	fmt.Println("After the time is:", time.Now().Unix())
 }
 
