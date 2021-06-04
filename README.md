@@ -61,7 +61,6 @@ https://sayedalesawy.hashnode.dev/top-5-lessons-i-learned-while-working-with-go-
 
 ## concurrency
 
-https://www.youtube.com/c/vilito-exquisitus/playlists  
 https://blog.john-pfeiffer.com/golang-concurrency-goroutines-and-channels/#buffered-channels-and-returning-a-value  
 
 ## project structure
