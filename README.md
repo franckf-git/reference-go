@@ -28,7 +28,6 @@
 # blog archives
 
 https://blog.golang.org/concurrency-timeouts  
-https://blog.golang.org/declaration-syntax  
 https://blog.golang.org/defer-panic-and-recover  
 https://blog.golang.org/docker  
 https://blog.golang.org/error-handling-and-go  
@@ -43,6 +42,7 @@ https://www.alexedwards.net/blog/organising-database-access
 https://www.calhoun.io/using-mvc-to-structure-go-web-applications  
 https://www.calhoun.io/lets-learn-algorithms  
 https://www.calhoun.io/using-postgresql-with-go  
+https://blog.golang.org/race-detector  
 
 ## project structure
 
