@@ -43,11 +43,6 @@ https://www.alexedwards.net/blog/organising-database-access
 https://www.calhoun.io/using-mvc-to-structure-go-web-applications  
 https://www.calhoun.io/lets-learn-algorithms  
 https://www.calhoun.io/using-postgresql-with-go  
-https://sayedalesawy.hashnode.dev/top-5-lessons-i-learned-while-working-with-go-for-two-years?guid=none&deviceId=ec640ad1-5299-47e8-8104-d72756c4b5da--
-
-## concurrency
-
-https://blog.john-pfeiffer.com/golang-concurrency-goroutines-and-channels/#buffered-channels-and-returning-a-value  
 
 ## project structure
 
