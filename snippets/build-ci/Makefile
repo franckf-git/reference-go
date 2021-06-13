@@ -5,7 +5,7 @@ all: build test
 
 .PHONY: build
 build:
-	go build -ldflags=-w -o ${BINARY_NAME} main.go
+	go build -ldflags="-s -w" -o ${BINARY_NAME} main.go
 
 .PHONY: test
 test:
