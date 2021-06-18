@@ -11,3 +11,7 @@ go test -cpuprofile cpu.prof -bench effective_test.go
 go tool pprof cpu.prof
 # in cmd prompt : show process
 top5 -cum
+
+# memory profile
+go test -memprofile mem.prof -bench effectivemem_test.go
+go tool pprof mem.prof
