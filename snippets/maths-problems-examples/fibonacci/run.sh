@@ -1,5 +1,5 @@
 # run
-go run main.go fibo.go binet.go recursive.go
+go run main.go fibo.go binet.go recursive.go effective.go
 
 # cpu profile
 go test -cpuprofile cpu.prof -bench recursive_test.go
