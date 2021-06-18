@@ -7,5 +7,6 @@ import (
 func main() {
 	resultF := Fibo(17)
 	resultB := Binet(17)
-	fmt.Println(resultF, resultB)
+	resultR := Recursive(17)
+	fmt.Println(resultF, resultB, resultR)
 }
