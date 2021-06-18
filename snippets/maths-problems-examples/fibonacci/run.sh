@@ -15,3 +15,6 @@ top5 -cum
 # memory profile
 go test -memprofile mem.prof -bench effectivemem_test.go
 go tool pprof mem.prof
+
+# both
+go test -cpuprofile cpu.prof -memprofile mem.prof -bench .
