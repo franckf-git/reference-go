@@ -15,8 +15,6 @@
 
 ## tests
 
-- *http.ListenAndServe(":5000"...) takes a port to listen on a Handler* : on peut donc avoir plusieurs ports avec plusieurs handler dans un seul program ?
-
 - go generate / go fix : pour generer du code compatible ? https://blog.golang.org/generate
 
 - auto-build gitlab
