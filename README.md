@@ -23,6 +23,8 @@
 
 - https://github.com/stretchr/testify
 
+- concurrence c'est bien mais comment faire du "vrai" parallélisme et utiliser plusieurs threads du CPU ?
+
 # blog archives
 
 https://blog.golang.org/concurrency-timeouts  
