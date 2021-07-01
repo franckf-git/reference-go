@@ -3,6 +3,8 @@ BINARY_NAME=main.out
 
 all: build test
 
+# you can also have all PHONY in one line: .PHONY build test cover ...
+
 .PHONY: build
 build:
 	go build -ldflags="-s -w" -o ${BINARY_NAME} main.go
@@ -35,3 +37,6 @@ install:
 	make build
 	mkdir -p ~/.local/bin
 	cp ${BINARY_NAME} ~/.local/bin
+
+deps:
+	go get # whatever
