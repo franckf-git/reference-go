@@ -2,6 +2,7 @@
 - [intro go](http://www.golang-book.com/books/intro)
 - [documentation](https://golang.org/doc/)
 - [go with tests](https://quii.gitbook.io/learn-go-with-tests/)
+- [golangdocs](https://golangdocs.com/)
 
 ## Packages
 - [packages](https://pkg.go.dev/)
