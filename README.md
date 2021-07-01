@@ -19,7 +19,7 @@
 
 - auto-build gitlab
 
-- go test : comment chercher/lancer les tests dans les sous-dossiers `./...` ?
+- go test : comment chercher/lancer les tests dans les sous-dossiers `./...` ? `go test -cover -race ./...`
 
 - https://github.com/stretchr/testify
 
