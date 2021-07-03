@@ -9,6 +9,7 @@
 - [awesome-go](https://github.com/avelino/awesome-go)
 
 ## Bests Practices
+- [gobest-2016](https://peter.bourgon.org/go-best-practices-2016/#conclusion)
 - [gitlab guidelines](https://docs.gitlab.com/ee/development/go_guide/)
 - [code-review](https://github.com/golang/go/wiki/CodeReviewComments)
 - [effective-go](https://golang.org/doc/effective_go)
