@@ -27,3 +27,4 @@
 
 - concurrence c'est bien mais comment faire du "vrai" parallélisme et utiliser plusieurs threads du CPU ?
 
+- différences entre build et install ?
