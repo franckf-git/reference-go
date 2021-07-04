@@ -7,11 +7,11 @@ help: ## Affiche cette aide
 
 .PHONY: build
 build: ## Construit l'image de l'application
-	podman build -t $(folder) .
+	podman build --tag $(folder) .
 
 .PHONY: run
 run: ## Lance le container de l'application
-	podman run -p 8081:8081 -it $(folder)
+	podman run --publish 8081:8081 --interactive --rm $(folder)
 
 .PHONY: ps
 ps: ## Les containers lancés
