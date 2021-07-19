@@ -17,8 +17,6 @@
 
 ## tests
 
-- go generate / go fix : pour generer du code compatible ? https://blog.golang.org/generate
-
 - auto-build gitlab
 
 - https://github.com/stretchr/testify
