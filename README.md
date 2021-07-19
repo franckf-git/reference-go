@@ -26,3 +26,5 @@
 - différences entre build et install ?
 
 - init() vs main() ?
+
+- methodes privées et publiques et comment les tester
