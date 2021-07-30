@@ -15,6 +15,7 @@ func main() {
 	fmt.Println(slice1) // prints [5 7 9 11 13 15]
 	slice2 := slice1[2:4]
 	fmt.Println(slice2) // prints [9 11]
+	// slice := odds[(position to start slicing):(position to start + length of slice)]
 
 	// Creating slices using make() function
 	s1 := make([]int, 5) // make an int slice of length 5
