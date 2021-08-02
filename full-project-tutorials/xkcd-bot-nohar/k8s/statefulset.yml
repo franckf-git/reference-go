@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: xkcd-bot
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: xkcd-bot
+  serviceName: xkcd-bot
+  template:
+    metadata:
+      labels:
+        app: xkcd-bot
+      annotations:
+        prometheus.io/scrape: 'true'
+        prometheus.io/port:   '2112'
+
+    spec:
+      containers:
+      - name: bot
+        image: neuware/xkcd-bot
+        env:
+        - name: BOT_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: bot-secret
+              key: token
+        - name: INDEX_PATH
+          value: /var/lib/xkcd.index
+        volumeMounts:
+          - mountPath: /var/lib/xkcd.index
+            name: xkcd-index
+            readOnly: false
+        ports:
+          - name: prometheus-port
+            protocol: TCP
+            containerPort: 2112
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 2112
+          initialDelaySeconds: 5
+  volumeClaimTemplates:
+  - metadata:
+      name: xkcd-index
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 100Mi
