@@ -23,6 +23,3 @@
 
 - concurrence c'est bien mais comment faire du "vrai" parallélisme et utiliser plusieurs threads du CPU ?
 
-- methodes privées et publiques et comment les tester
-
-- pas besoin de modules si tous les fichiers ont le même "package" ? cela marche pour les sous-dossiers ? et pour les méthodes privées et exportables ?
