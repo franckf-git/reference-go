@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"log"
 	"os"
+	"strconv"
 	"strings"
 
 	"github.com/wcharczuk/go-chart/v2"
@@ -19,12 +20,12 @@ func main() {
 	log.Println("Chart created.")
 }
 
-func getAlphabetFreq(db *sql.DB, limit int) map[string]float64 {
+func getAlphabetFreq(db *sql.DB, limit int) [27]float64 {
 	if limit == 0 {
 		limit = countValues(db)
 	}
 
-	alphabet := make(map[string]float64)
+	alphabet := [27]float64{}
 
 	rows, err := db.Query("SELECT title,links FROM doc LIMIT ?", limit)
 	if err != nil {
@@ -39,7 +40,8 @@ func getAlphabetFreq(db *sql.DB, limit int) map[string]float64 {
 			log.Fatal("Select fail - scanning values:", err)
 		}
 		letter := parsingTitle(title)
-		alphabet[letter] = float64(links) + alphabet[letter]
+		position := posAlphabet(letter)
+		alphabet[position] = float64(links) + alphabet[position]
 	}
 	err = rows.Err()
 	if err != nil {
@@ -49,12 +51,12 @@ func getAlphabetFreq(db *sql.DB, limit int) map[string]float64 {
 	return alphabet
 }
 
-func createChart(datas map[string]float64) {
+func createChart(datas [27]float64) {
 
 	values := []chart.Value{}
 
 	for label, value := range datas {
-		adding := []chart.Value{{Label: label, Value: value}}
+		adding := []chart.Value{{Label: strconv.Itoa(label), Value: value}}
 		values = append(values, adding...)
 	}
 
