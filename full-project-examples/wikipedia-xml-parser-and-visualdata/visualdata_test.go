@@ -39,7 +39,7 @@ func Test_posAlphabet(t *testing.T) {
 		want int
 	}{
 		{name: "uppercase", args: args{firstCharac: "A"}, want: 0},
-		{name: "lowercase", args: args{firstCharac: "p"}, want: 14},
+		{name: "lowercase", args: args{firstCharac: "p"}, want: 15},
 		{name: "special1", args: args{firstCharac: "%"}, want: 26},
 		{name: "special2", args: args{firstCharac: "&"}, want: 26},
 		{name: "special3", args: args{firstCharac: " "}, want: 26},

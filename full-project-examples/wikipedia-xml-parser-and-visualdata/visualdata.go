@@ -24,8 +24,7 @@ func getAlphabetFreq(db *sql.DB, limit int) map[string]float64 {
 		limit = countValues(db)
 	}
 
-	//alphabet := make(map[string]float64)
-	// convert lower case minus 97 - ignore all not between 0 et 25
+	alphabet := make(map[string]float64)
 
 	rows, err := db.Query("SELECT title,links FROM doc LIMIT ?", limit)
 	if err != nil {
@@ -83,5 +82,11 @@ func parsingTitle(title string) string {
 }
 
 func posAlphabet(firstCharac string) int {
-
+	lowerC := strings.ToLower(firstCharac)
+	converRune := []rune(lowerC)
+	interval := int(converRune[0]) - 97
+	if interval >= 0 && interval <= 25 {
+		return interval
+	}
+	return 26
 }
