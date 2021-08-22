@@ -84,9 +84,9 @@ func parsingTitle(title string) string {
 func posAlphabet(firstCharac string) int {
 	lowerC := strings.ToLower(firstCharac)
 	converRune := []rune(lowerC)
-	interval := int(converRune[0]) - 97
-	if interval >= 0 && interval <= 25 {
+	interval := int(converRune[0]) - 96
+	if interval >= 1 && interval <= 26 {
 		return interval
 	}
-	return 26
+	return 0
 }

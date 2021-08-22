@@ -38,11 +38,11 @@ func Test_posAlphabet(t *testing.T) {
 		args args
 		want int
 	}{
-		{name: "uppercase", args: args{firstCharac: "A"}, want: 0},
-		{name: "lowercase", args: args{firstCharac: "p"}, want: 15},
-		{name: "special1", args: args{firstCharac: "%"}, want: 26},
-		{name: "special2", args: args{firstCharac: "&"}, want: 26},
-		{name: "special3", args: args{firstCharac: " "}, want: 26},
+		{name: "uppercase", args: args{firstCharac: "A"}, want: 1},
+		{name: "lowercase", args: args{firstCharac: "p"}, want: 16},
+		{name: "special1", args: args{firstCharac: "%"}, want: 0},
+		{name: "special2", args: args{firstCharac: "&"}, want: 0},
+		{name: "special3", args: args{firstCharac: " "}, want: 0},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
