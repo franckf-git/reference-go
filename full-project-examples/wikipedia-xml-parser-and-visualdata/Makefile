@@ -9,7 +9,7 @@ build: ## create binary for parsing
 	go build -ldflags="-s -w" -o ${BINARY_NAME} ./...
 
 visualdata: ## create binary for data visualization
-	go build -ldflags="-s -w" -o visualdata visualdata.go
+	go build -ldflags="-s -w" -o visualdata visualdata.go model.go
 
 test: ## run the tests
 	go test ./... -v

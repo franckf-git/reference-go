@@ -16,6 +16,7 @@ func main() {
 
 	var datas = getAlphabetFreq(db, 0)
 	createChart(datas)
+	log.Println("Chart created.")
 }
 
 func getAlphabetFreq(db *sql.DB, limit int) map[string]float64 {
@@ -23,7 +24,8 @@ func getAlphabetFreq(db *sql.DB, limit int) map[string]float64 {
 		limit = countValues(db)
 	}
 
-	alphabet := make(map[string]float64)
+	//alphabet := make(map[string]float64)
+	// convert lower case minus 97 - ignore all not between 0 et 25
 
 	rows, err := db.Query("SELECT title,links FROM doc LIMIT ?", limit)
 	if err != nil {
@@ -78,4 +80,8 @@ func createChart(datas map[string]float64) {
 func parsingTitle(title string) string {
 	withoutWikipedia := strings.Replace(title, "Wikipedia: ", "", -1)
 	return withoutWikipedia[:1]
+}
+
+func posAlphabet(firstCharac string) int {
+
 }

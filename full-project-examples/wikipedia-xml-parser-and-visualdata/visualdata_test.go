@@ -1,6 +1,8 @@
 package main
 
-import "testing"
+import (
+	"testing"
+)
 
 func Test_parsingTitle(t *testing.T) {
 	type args struct {
@@ -22,6 +24,30 @@ func Test_parsingTitle(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := parsingTitle(tt.args.title); got != tt.want {
 				t.Errorf("parsingTitle() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func Test_posAlphabet(t *testing.T) {
+	type args struct {
+		firstCharac string
+	}
+	tests := []struct {
+		name string
+		args args
+		want int
+	}{
+		{name: "uppercase", args: args{firstCharac: "A"}, want: 0},
+		{name: "lowercase", args: args{firstCharac: "p"}, want: 14},
+		{name: "special1", args: args{firstCharac: "%"}, want: 26},
+		{name: "special2", args: args{firstCharac: "&"}, want: 26},
+		{name: "special3", args: args{firstCharac: " "}, want: 26},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := posAlphabet(tt.args.firstCharac); got != tt.want {
+				t.Errorf("posAlphabet() = %v, want %v", got, tt.want)
 			}
 		})
 	}
