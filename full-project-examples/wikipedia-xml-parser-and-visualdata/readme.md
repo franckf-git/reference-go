@@ -1,7 +1,7 @@
 With the file enwiki-20210620-abstract.xml (6Go) from the autosave of [Wikipedia](https://meta.wikimedia.org/wiki/Data_dumps) , we will parse it and save datas in a sqlite database and export stats in data visualization.
 It is a training on larger data in go code.
 
-TLDR: result :
+**TLDR - here the result**
 ![stats](output.png)
 
 # parsing
@@ -30,8 +30,6 @@ xml file start with a `feed` anchor them list terms with the tags:
 `title`, `url` and `abstract` will be easy to parse and put in database. `links` and the `sublinks` are more trickies (not really but put them on the side for now) we will just save the count of `sublinks` in each `doc` for now.
 
 > parsing and save DONE
->
-> > error handling TODO
 
 ## database structure
 
