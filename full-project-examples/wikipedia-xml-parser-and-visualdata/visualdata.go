@@ -4,7 +4,6 @@ import (
 	"database/sql"
 	"log"
 	"os"
-	"strconv"
 	"strings"
 
 	"github.com/wcharczuk/go-chart/v2"
@@ -55,21 +54,17 @@ func createChart(datas [27]float64) {
 
 	values := []chart.Value{}
 
-	for label, value := range datas {
-		adding := []chart.Value{{Label: strconv.Itoa(label), Value: value}}
+	for index, value := range datas {
+		label := posToAlpha(index)
+		adding := []chart.Value{{Label: label, Value: value}}
 		values = append(values, adding...)
 	}
 
 	graph := chart.BarChart{
-		Title: "Stats - Links by Letter",
-		Background: chart.Style{
-			Padding: chart.Box{
-				Top: 40,
-			},
-		},
-		Height:   1024,
-		Width:    4096,
-		BarWidth: 60,
+		Title:    "Stats - Links by Letter",
+		Width:    1800,
+		Height:   1000,
+		BarWidth: 50,
 		Bars:     values,
 	}
 
