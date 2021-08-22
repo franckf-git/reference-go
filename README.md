@@ -15,6 +15,8 @@
 - [effective-go](https://golang.org/doc/effective_go)
 - [common-mistakes](http://devs.cloudimmunity.com/gotchas-and-common-mistakes-in-go-golang/index.html)
 
+- [codes for runes](https://en.wikipedia.org/wiki/ASCII#Printable_characters)
+
 ## tests
 
 - auto-build gitlab
