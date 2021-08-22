@@ -46,8 +46,30 @@ func Test_posAlphabet(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := posAlphabet(tt.args.firstCharac); got != tt.want {
+			if got := alphaToPos(tt.args.firstCharac); got != tt.want {
 				t.Errorf("posAlphabet() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func Test_posToAlpha(t *testing.T) {
+	type args struct {
+		pos int
+	}
+	tests := []struct {
+		name string
+		args args
+		want string
+	}{
+		{name: "a", args: args{pos: 1}, want: "A"},
+		{name: "p", args: args{pos: 16}, want: "P"},
+		{name: "special", args: args{pos: 0}, want: "spe"},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := posToAlpha(tt.args.pos); got != tt.want {
+				t.Errorf("posToAlpha() = %v, want %v", got, tt.want)
 			}
 		})
 	}

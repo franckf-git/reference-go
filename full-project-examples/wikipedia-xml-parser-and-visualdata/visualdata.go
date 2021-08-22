@@ -40,7 +40,7 @@ func getAlphabetFreq(db *sql.DB, limit int) [27]float64 {
 			log.Fatal("Select fail - scanning values:", err)
 		}
 		letter := parsingTitle(title)
-		position := posAlphabet(letter)
+		position := alphaToPos(letter)
 		alphabet[position] = float64(links) + alphabet[position]
 	}
 	err = rows.Err()
@@ -83,7 +83,7 @@ func parsingTitle(title string) string {
 	return withoutWikipedia[:1]
 }
 
-func posAlphabet(firstCharac string) int {
+func alphaToPos(firstCharac string) int {
 	lowerC := strings.ToLower(firstCharac)
 	converRune := []rune(lowerC)
 	interval := int(converRune[0]) - 96
@@ -91,4 +91,12 @@ func posAlphabet(firstCharac string) int {
 		return interval
 	}
 	return 0
+}
+
+func posToAlpha(pos int) string {
+	if pos == 0 {
+		return "spe"
+	}
+	ascii := pos + 64
+	return string(rune(ascii))
 }
