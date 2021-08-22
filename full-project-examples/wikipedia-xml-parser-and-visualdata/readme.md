@@ -1,6 +1,9 @@
 With the file enwiki-20210620-abstract.xml (6Go) from the autosave of [Wikipedia](https://meta.wikimedia.org/wiki/Data_dumps) , we will parse it and save datas in a sqlite database and export stats in data visualization.
 It is a training on larger data in go code.
 
+TLDR: result :
+![stats](output.png)
+
 # parsing
 
 ## source file
@@ -90,6 +93,6 @@ Parsing of titles to get the letter works fine.
 The go-chart library is every efficient.
 
 Two issues:
+
 - unknown characters aren't handle, so they are in the chart but not readable (bad encoding ?).
 - As we use a map, the result in the chart aren't sorted.
-
