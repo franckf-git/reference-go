@@ -14,12 +14,20 @@ print(insertion_sort(unsorted_array))
 */
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"reflect"
+)
 
 func main() {
-	fmt.Println(insertionSort([]int{2018, 1998, 1986, 2020, 2006})) // ? [1986, 1998, 2006, 2018, 2020]
+	sorting := insertionSort([]int{2018, 1998, 1986, 2020, 2006})
+	if reflect.DeepEqual(sorting, []int{1986, 1998, 2006, 2018, 2020}) {
+		fmt.Println("ok")
+	} else {
+		fmt.Println("Nok")
+	}
 }
 
 func insertionSort(datas []int) []int {
-
+	return []int{}
 }

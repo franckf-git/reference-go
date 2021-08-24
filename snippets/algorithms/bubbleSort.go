@@ -21,12 +21,20 @@ console.log(bubbleSort(unsortedArray))
 */
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"reflect"
+)
 
 func main() {
-	fmt.Println(bubbleSort([]int{2018, 1998, 1986, 2020, 2006})) // ? [1986, 1998, 2006, 2018, 2020]
+	sorting := bubbleSort([]int{2018, 1998, 1986, 2020, 2006})
+	if reflect.DeepEqual(sorting, []int{1986, 1998, 2006, 2018, 2020}) {
+		fmt.Println("ok")
+	} else {
+		fmt.Println("Nok")
+	}
 }
 
 func bubbleSort(datas []int) []int {
-
+	return []int{}
 }
