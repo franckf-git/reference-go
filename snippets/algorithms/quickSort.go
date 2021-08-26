@@ -28,20 +28,6 @@ print(quick_sort([2018, 1998, 1986, 2020, 2006]))
 */
 package main
 
-import (
-	"fmt"
-	"reflect"
-)
-
-func main() {
-	sorting := quickSort([]int{2018, 1998, 1986, 2020, 2006})
-	if reflect.DeepEqual(sorting, []int{1986, 1998, 2006, 2018, 2020}) {
-		fmt.Println("ok")
-	} else {
-		fmt.Println("Nok")
-	}
-}
-
 func quickSort(datas []int) []int {
 	return []int{}
 }

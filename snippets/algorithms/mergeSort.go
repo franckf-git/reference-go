@@ -51,20 +51,6 @@ console.log(mergeSort([2020, 1998, 2018, 1986, 2006]))
 */
 package main
 
-import (
-	"fmt"
-	"reflect"
-)
-
-func main() {
-	sorting := mergeSort([]int{2018, 1998, 1986, 2020, 2006})
-	if reflect.DeepEqual(sorting, []int{1986, 1998, 2006, 2018, 2020}) {
-		fmt.Println("ok")
-	} else {
-		fmt.Println("Nok")
-	}
-}
-
 func mergeSort(datas []int) []int {
 	return []int{}
 }

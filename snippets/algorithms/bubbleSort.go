@@ -1,20 +1,5 @@
 package main
 
-import (
-	"fmt"
-	"reflect"
-)
-
-func main() {
-	sorting := bubbleSort([]int{2018, 1998, 1986, 2020, 2006})
-	if reflect.DeepEqual(sorting, []int{1986, 1998, 2006, 2018, 2020}) {
-		fmt.Println("ok")
-	} else {
-		fmt.Println("Nok")
-		fmt.Println(sorting)
-	}
-}
-
 func bubbleSort(datas []int) []int {
 	datasLen := len(datas)
 	for i := 0; i < datasLen; i++ {
