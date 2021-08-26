@@ -34,7 +34,6 @@ func swap(numbers []int, prevPass int) bool {
 		compare1 := numbers[number1]
 		compare2 := numbers[number2]
 		if compare1 > compare2 {
-			fmt.Println(numbers)
 			numbers[number1] = compare2
 			numbers[number2] = compare1
 			swapDone = true
