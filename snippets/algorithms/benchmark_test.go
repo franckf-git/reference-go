@@ -13,3 +13,4 @@ func Benchmark_bubbleSort(b *testing.B) {
 }
 
 // Benchmark_bubbleSort-12    	  906519	      1277 ns/op
+// without optimize Benchmark_bubbleSort-12    	    1372	    877116 ns/op

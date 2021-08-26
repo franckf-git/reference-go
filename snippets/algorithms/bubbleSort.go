@@ -29,6 +29,4 @@ func swap(numbers []int, prevPass int) bool {
 	return swapDone
 }
 
-// TODO try and benchmark longer slices with and without optimize
-
 // TODO do calhoun execises (desc, strings, names)
