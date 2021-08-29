@@ -1,56 +1,37 @@
-/*
-const mergeSort = array => {
-  // divide array until there's only one element
-  // the recursive stop condition !
-  if (array.length > 1) {
-    // get the middle index of the current division
-    const middleIndex = Math.floor(array.length / 2)
-    // get left side
-    const leftSide = array.slice(0, middleIndex)
-    // get right side
-    const rightSide = array.slice(middleIndex)
-    // call recursively for the left part of the data
-    mergeSort(leftSide)
-    // call recursively for the right part of the data
-    mergeSort(rightSide)
-    // default setup of the indexes
-    let leftIndex = 0, rightIndex = 0, globalIndex = 0
-    // loop until we reach the end of the left or the right array
-    // we can't compare if there is only one element
-    while(leftIndex < leftSide.length && rightIndex < rightSide.length) {
-      // actual sort comparaison is here
-      // if the left element is smaller its should be first in the array
-      // else the right element should be first
-      // move indexes at each steps
-      if (leftSide[leftIndex] < rightSide[rightIndex]) {
-        array[globalIndex] = leftSide[leftIndex]
-        leftIndex++
-      } else {
-        array[globalIndex] = rightSide[rightIndex]
-        rightIndex++
-      }
-      globalIndex++
-    }
-    // making sure that any element was not left behind during the process
-    while(leftIndex < leftSide.length) {
-      array[globalIndex] = leftSide[leftIndex]
-      leftIndex++
-      globalIndex++
-    }
-    while(rightIndex < rightSide.length) {
-      array[globalIndex] = rightSide[rightIndex]
-      rightIndex++
-      globalIndex++
-    }
-  }
-  return array
-}
-console.log(mergeSort([2020, 1998, 2018, 1986, 2006]))
-// [1986, 1998, 2006, 2018, 2020]
-
-*/
 package main
 
+import "fmt"
+
 func mergeSort(datas []int) []int {
-	return []int{}
+	if len(datas) < 2 {
+		return datas
+	}
+	middle := len(datas) / 2
+	fmt.Println(datas, middle)
+	leftSide := mergeSort(datas[:middle])
+	rightSide := mergeSort(datas[middle:])
+	return merge(leftSide, rightSide)
+}
+
+func merge(leftSide []int, rightSide []int) []int {
+	result := []int{}
+	leftIndex, rightIndex := 0, 0
+	for leftIndex < len(leftSide) && rightIndex < len(rightSide) {
+		if leftSide[leftIndex] < rightSide[rightIndex] {
+			result = append(result, leftSide[leftIndex])
+			leftIndex++
+		} else {
+			result = append(result, rightSide[rightIndex])
+			rightIndex++
+		}
+	}
+	for leftIndex < len(leftSide) {
+		result = append(result, leftSide[leftIndex])
+		leftIndex++
+	}
+	for rightIndex < len(rightSide) {
+		result = append(result, rightSide[rightIndex])
+		rightIndex++
+	}
+	return result
 }
