@@ -30,3 +30,11 @@ func swap(numbers []int, prevPass int) bool {
 }
 
 // TODO do calhoun execises (desc, strings, names)
+
+func bubbleSortDesc(datas []int) []int {
+	return []int{}
+}
+
+func bubbleSortStrings(datas []string) []string {
+	return []string{}
+}
