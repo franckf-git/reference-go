@@ -33,3 +33,16 @@ func Benchmark_quickSort(b *testing.B) {
 // Benchmark_bubbleSort-12       	 1000000	      1096 ns/op	       0 B/op	       0 allocs/op
 // Benchmark_insertionSort-12    	  928897	      1268 ns/op	       0 B/op	       0 allocs/op
 // Benchmark_quickSort-12        	     120	   9190382 ns/op	10697311 B/op	    9916 allocs/op
+
+func Benchmark_mergeSort(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		mergeSort(list)
+	}
+}
+
+/*
+Benchmark_bubbleSort-12       	 1000000	      1066 ns/op	       0 B/op	       0 allocs/op
+Benchmark_insertionSort-12    	  906271	      1300 ns/op	       0 B/op	       0 allocs/op
+Benchmark_quickSort-12        	     122	   9416152 ns/op	10697312 B/op	    9916 allocs/op
+Benchmark_mergeSort-12        	    3411	    335681 ns/op	  155080 B/op	    3011 allocs/op
+*/

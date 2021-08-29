@@ -1,13 +1,10 @@
 package main
 
-import "fmt"
-
 func mergeSort(datas []int) []int {
 	if len(datas) < 2 {
 		return datas
 	}
 	middle := len(datas) / 2
-	fmt.Println(datas, middle)
 	leftSide := mergeSort(datas[:middle])
 	rightSide := mergeSort(datas[middle:])
 	return merge(leftSide, rightSide)
