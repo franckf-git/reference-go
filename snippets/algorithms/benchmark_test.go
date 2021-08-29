@@ -23,3 +23,13 @@ func Benchmark_insertionSort(b *testing.B) {
 
 // Benchmark_bubbleSort-12          1760535               635.8 ns/op
 // Benchmark_insertionSort-12       1148853              1057 ns/op
+
+func Benchmark_quickSort(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		quickSort(list)
+	}
+}
+
+// Benchmark_bubbleSort-12       	 1000000	      1096 ns/op	       0 B/op	       0 allocs/op
+// Benchmark_insertionSort-12    	  928897	      1268 ns/op	       0 B/op	       0 allocs/op
+// Benchmark_quickSort-12        	     120	   9190382 ns/op	10697311 B/op	    9916 allocs/op
