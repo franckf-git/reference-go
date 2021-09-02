@@ -42,7 +42,7 @@ func main() {
 
 	wantBD := []int{24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0}
 	sortingBD := bubbleSortDesc([]int{21, 4, 2, 13, 10, 0, 19, 11, 7, 5, 23, 18, 9, 14, 6, 8, 1, 20, 17, 3, 16, 22, 24, 15, 12})
-	if reflect.DeepEqual(sortingB, wantBD) {
+	if reflect.DeepEqual(sortingBD, wantBD) {
 		fmt.Println("ok")
 	} else {
 		fmt.Println("Nok")
