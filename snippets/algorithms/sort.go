@@ -34,7 +34,7 @@ func (this ByAge) Swap(i, j int) {
 	this[i], this[j] = this[j], this[i]
 }
 
-func main() {
+func sortmain() {
 	kids := []Person{
 		{"Jill", 9},
 		{"Jack", 10},
