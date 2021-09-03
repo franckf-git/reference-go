@@ -29,8 +29,6 @@ func swap(numbers []int, prevPass int) bool {
 	return swapDone
 }
 
-// TODO do calhoun execises (desc, strings, names)
-
 func bubbleSortDesc(datas []int) []int {
 	datasLen := len(datas)
 	for i := 0; i < datasLen; i++ {
@@ -57,5 +55,27 @@ func sweep(numbers []int) {
 }
 
 func bubbleSortStrings(datas []string) []string {
-	return []string{}
+	datasLen := len(datas)
+	for i := 0; i < datasLen; i++ {
+		swapString(datas)
+	}
+	swapString(datas)
+	return datas
+}
+
+func swapString(words []string) {
+	wordsLen := len(words)
+	word1 := 0
+	word2 := 1
+
+	for word2 < wordsLen {
+		compare1 := words[word1]
+		compare2 := words[word2]
+		if compare1 > compare2 {
+			words[word1] = compare2
+			words[word2] = compare1
+		}
+		word1++
+		word2++
+	}
 }
