@@ -49,16 +49,12 @@ func main() {
 		fmt.Println(sortingBD)
 	}
 
-	wantBS := []string{"alligator", "bald", "bat", "beetle", "camel", "cat", "cheetah", "colt", "cow", "dog", "dung", "eagle", "frog", "hamster", "horse", "mink", "moose", "porcupine", "rat", "rooster", "steer"}
+	wantBS := []string{"alligator", "bald eagle", "bat", "camel", "cat", "cheetah", "colt", "cow", "dog", "dung beetle", "frog", "hamster", "horse", "mink", "moose", "porcupine", "rat", "rooster", "steer"}
 	sortingBS := bubbleSortStrings([]string{"dog", "cat", "alligator", "cheetah", "rat", "moose", "cow", "mink", "porcupine", "dung beetle", "camel", "steer", "bat", "hamster", "horse", "colt", "bald eagle", "frog", "rooster"})
 	if reflect.DeepEqual(sortingBS, wantBS) {
 		fmt.Println("ok")
 	} else {
-		minitest := []string{"eagle", "bat"}
-		swapString(minitest)
-		fmt.Println(minitest)
 		fmt.Println("Nok")
-		fmt.Println(wantBS)
 		fmt.Println(sortingBS)
 	}
 }
