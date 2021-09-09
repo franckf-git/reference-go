@@ -1,6 +1,6 @@
 package main
 
-// binarySearch clahoun implement no recursif and no new slice
+// binarySearch calhoun implement no recursif and no new slice
 func binarySearch(numbers []int, search int) int {
 	lo := 0
 	hi := len(numbers) - 1
@@ -22,5 +22,10 @@ func binarySearch(numbers []int, search int) int {
 
 	// If we get here we tried to look at an invalid sub-list
 	// which means the number isn't in our list.
+	return -1
+}
+
+// binarySearch2 my implement with recurvive
+func binarySearch2(numbers []int, search int) int {
 	return -1
 }

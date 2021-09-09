@@ -67,4 +67,11 @@ func main() {
 		fmt.Println("Nok")
 		fmt.Println(gotBinS)
 	}
+	gotBinS2 := binarySearch2(sortedList, 6)
+	if wantBinS == gotBinS2 {
+		fmt.Println("ok")
+	} else {
+		fmt.Println("Nok")
+		fmt.Println(gotBinS2)
+	}
 }
