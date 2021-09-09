@@ -6,13 +6,16 @@ import (
 )
 
 func main() {
+	colorReset := "\033[0m"
+	colorRed := "\033[31m"
+
 	want := []int{1986, 1998, 2006, 2018, 2020}
 
 	sortingB := bubbleSort([]int{2018, 1998, 1986, 2020, 2006})
 	if reflect.DeepEqual(sortingB, want) {
 		fmt.Println("ok")
 	} else {
-		fmt.Println("Nok")
+		fmt.Println(colorRed, "Nok", colorReset)
 		fmt.Println(sortingB)
 	}
 
@@ -20,7 +23,7 @@ func main() {
 	if reflect.DeepEqual(sortingI, want) {
 		fmt.Println("ok")
 	} else {
-		fmt.Println("Nok")
+		fmt.Println(colorRed, "Nok", colorReset)
 		fmt.Println(sortingI)
 	}
 
@@ -28,7 +31,7 @@ func main() {
 	if reflect.DeepEqual(sortingM, want) {
 		fmt.Println("ok")
 	} else {
-		fmt.Println("Nok")
+		fmt.Println(colorRed, "Nok", colorReset)
 		fmt.Println(sortingM)
 	}
 
@@ -36,7 +39,7 @@ func main() {
 	if reflect.DeepEqual(sortingQ, want) {
 		fmt.Println("ok")
 	} else {
-		fmt.Println("Nok")
+		fmt.Println(colorRed, "Nok", colorReset)
 		fmt.Println(sortingQ)
 	}
 
@@ -45,7 +48,7 @@ func main() {
 	if reflect.DeepEqual(sortingBD, wantBD) {
 		fmt.Println("ok")
 	} else {
-		fmt.Println("Nok")
+		fmt.Println(colorRed, "Nok", colorReset)
 		fmt.Println(sortingBD)
 	}
 
@@ -54,7 +57,7 @@ func main() {
 	if reflect.DeepEqual(sortingBS, wantBS) {
 		fmt.Println("ok")
 	} else {
-		fmt.Println("Nok")
+		fmt.Println(colorRed, "Nok", colorReset)
 		fmt.Println(sortingBS)
 	}
 
@@ -64,14 +67,14 @@ func main() {
 	if wantBinS == gotBinS {
 		fmt.Println("ok")
 	} else {
-		fmt.Println("Nok")
+		fmt.Println(colorRed, "Nok", colorReset)
 		fmt.Println(gotBinS)
 	}
 	gotBinS2 := binarySearch2(sortedList, 6)
 	if wantBinS == gotBinS2 {
 		fmt.Println("ok")
 	} else {
-		fmt.Println("Nok")
+		fmt.Println(colorRed, "Nok", colorReset)
 		fmt.Println(gotBinS2)
 	}
 }
