@@ -27,5 +27,16 @@ func binarySearch(numbers []int, search int) int {
 
 // binarySearch2 my implement with recurvive
 func binarySearch2(numbers []int, search int) int {
-	return -1
+	var midIndex int = len(numbers) / 2
+	var midVal int = numbers[midIndex]
+	if midVal == search {
+		return midIndex
+	}
+	var left []int = numbers[:midIndex]
+	var righ []int = numbers[midIndex+1:]
+	if midVal > search {
+		return binarySearch2(left, search)
+	} else {
+		return binarySearch2(righ, search) + midIndex + 1
+	}
 }
