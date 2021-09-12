@@ -11,19 +11,23 @@ func (s *Stack) Push(add int) {
 }
 
 func (s *Stack) Pop() (first int) {
-	if len(s.slice) == 0 {
+	if s.Size() == 0 {
 		return -1
 	}
 	first = s.Peek()
-	s.slice = s.slice[:len(s.slice)-1]
+	s.slice = s.slice[:s.Size()-1]
 	return
 }
 
 func (s *Stack) Peek() int {
-	if len(s.slice) == 0 {
+	if s.Size() == 0 {
 		return -1
 	}
-	return s.slice[len(s.slice)-1]
+	return s.slice[s.Size()-1]
+}
+
+func (s *Stack) Size() int {
+	return len(s.slice)
 }
 
 func main() {
@@ -61,5 +65,6 @@ func main() {
 	myST1.Pop()
 	myST1.Pop()
 	myST1.Pop()
+	fmt.Println(myST1.Size())
 	fmt.Println(myST1.Peek())
 }
