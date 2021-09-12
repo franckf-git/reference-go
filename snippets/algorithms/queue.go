@@ -11,6 +11,9 @@ func (q *Queue) Enqueue(add int) {
 }
 
 func (q *Queue) Dequeue() (first int) {
+	if len(q.slice) == 0 {
+		return -1
+	}
 	first = q.slice[0]
 	q.slice = q.slice[1:len(q.slice)]
 	return
@@ -43,4 +46,9 @@ func main() {
 	fmt.Println(myMQ1.slice)
 	fmt.Println(myMQ2.slice)
 
+	myMQ1.Dequeue()
+	myMQ1.Dequeue()
+	myMQ1.Dequeue()
+	myMQ1.Dequeue()
+	fmt.Println(myMQ1.Dequeue())
 }
