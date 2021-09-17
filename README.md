@@ -24,6 +24,4 @@
 
 - https://github.com/stretchr/testify
 
-- tests files in specific directory ?
-
 - récupérer les arguments http sans gorilla/mux
