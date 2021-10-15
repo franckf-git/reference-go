@@ -1,3 +1,4 @@
-storage/database.sqlite3
+src/storage/database.sqlite3
 lite-api-crud
-models/backup/*
+src/models/backup/*
+pkg/
