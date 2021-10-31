@@ -20,8 +20,6 @@
 
 ## tests
 
-- auto-build gitlab
-
 - https://github.com/stretchr/testify
 
 - récupérer les arguments http sans gorilla/mux
