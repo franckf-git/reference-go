@@ -22,3 +22,6 @@
 
 - https://github.com/stretchr/testify
 
+- GOMAXPROCS
+
+- https://github.com/dgryski/go-perfbook#readme
