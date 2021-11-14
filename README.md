@@ -32,3 +32,5 @@
 
 - opentelemetry, gofuzz, pprof, Delve, GDB, go vet staticcheck
 
+- channel buffered
+
