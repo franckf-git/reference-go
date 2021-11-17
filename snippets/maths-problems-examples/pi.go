@@ -8,6 +8,10 @@ import (
 	"strings"
 
 	"github.com/wcharczuk/go-chart/v2"
+	"gonum.org/v1/plot"
+	"gonum.org/v1/plot/plotter"
+	"gonum.org/v1/plot/plotutil"
+	"gonum.org/v1/plot/vg"
 )
 
 func main() {
@@ -60,7 +64,25 @@ func main() {
 		},
 	}
 
-	chartFile, _ := os.Create("output.png")
+	chartFile, _ := os.Create("pi-line.png")
 	defer chartFile.Close()
 	graph.Render(chart.PNG, chartFile)
+
+	p := plot.New()
+	pts := make(plotter.XYs, len(piarrayfloat))
+	p.Title.Text = "values of pi"
+	p.X.Label.Text = "position"
+	p.Y.Label.Text = "values"
+	for i := range pts {
+		pts[i].X = piindexfloat[i]
+		pts[i].Y = piarrayfloat[i]
+	}
+	err := plotutil.AddLinePoints(p,
+		"pi", pts)
+	if err != nil {
+		panic(err)
+	}
+	if err := p.Save(14*vg.Inch, 4*vg.Inch, "pi-points.png"); err != nil {
+		panic(err)
+	}
 }
