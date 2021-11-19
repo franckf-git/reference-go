@@ -36,3 +36,4 @@
 
 - https://github.com/gorilla/handlers
 
+- `env GOSSAFUNC=main go build`
