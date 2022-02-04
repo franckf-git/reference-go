@@ -63,3 +63,29 @@ func reverseInefficient(in string) (out string) {
 	}
 	return
 }
+
+func reverseBatch(input []int) []int {
+	const batchSize = 1000
+	inputLen := len(input)
+	output := make([]int, inputLen)
+	var wg sync.WaitGroup
+
+	for i := 0; i < inputLen; i += batchSize {
+		wg.Add(1)
+		go func(i int) {
+			defer wg.Done()
+			l := i + batchSize
+			if l > inputLen {
+				l = inputLen
+			}
+			for ; i < l; i++ {
+				j := inputLen - i - 1
+				n := input[i]
+				output[j] = n
+			}
+		}(i)
+	}
+
+	wg.Wait()
+	return output
+}
