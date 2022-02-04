@@ -89,3 +89,27 @@ func reverseBatch(input []int) []int {
 	wg.Wait()
 	return output
 }
+
+func reverseBatchMiddle(input []int) {
+	const batchSize = 1000
+	inputLen := len(input)
+	inputMid := inputLen / 2
+	var wg sync.WaitGroup
+
+	for i := 0; i < inputMid; i += batchSize {
+		wg.Add(1)
+		go func(i int) {
+			defer wg.Done()
+			l := i + batchSize
+			if l > inputMid {
+				l = inputMid
+			}
+			for ; i < l; i++ {
+				j := inputLen - i - 1
+				input[i], input[j] = input[j], input[i]
+			}
+		}(i)
+	}
+
+	wg.Wait()
+}
