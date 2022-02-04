@@ -1,8 +1,9 @@
 package main
 
 func main() {
-	start := "😎⚽"
-	end := reverseRune2(start)
+	//start := "😎⚽"
+	start := "123456789"
+	end := reverseRuneMiddle(start)
 	print(end)
 	print("\n")
 }
@@ -34,6 +35,18 @@ func reverseRuneSplit(in string) string {
 	return string(runes)
 }
 
+func reverseRuneMiddle(in string) string {
+	runes := []rune(in)
+	start := 0
+	end := len(runes) - 1
+	for start < end {
+		runes[start], runes[end] = runes[end], runes[start]
+		start++
+		end--
+	}
+	return string(runes)
+}
+
 func reverseRuneInefficient(in string) (out string) {
 	runes := []rune(in)
 	var runesOut []rune
@@ -50,4 +63,3 @@ func reverseInefficient(in string) (out string) {
 	}
 	return
 }
-
