@@ -41,3 +41,5 @@
 
 - t.Parallel()
 
+- https://github.com/mvdan/gofumpt
+
