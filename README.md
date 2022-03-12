@@ -25,8 +25,6 @@
 
 - https://github.com/stretchr/testify
 
-- GOMAXPROCS
-
 - https://github.com/dgryski/go-perfbook#readme
 
 - [CGO build](https://stackoverflow.com/questions/61515186/when-using-cgo-enabled-is-must-and-what-happens)
