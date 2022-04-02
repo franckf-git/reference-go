@@ -35,7 +35,5 @@
 
 - https://github.com/gorilla/handlers
 
-- t.Parallel()
-
 - https://github.com/mvdan/gofumpt
 
