@@ -33,7 +33,5 @@
 
 - channel buffered
 
-- https://github.com/gorilla/handlers
-
 - https://github.com/mvdan/gofumpt
 
