@@ -29,7 +29,7 @@
 
 - [CGO build](https://stackoverflow.com/questions/61515186/when-using-cgo-enabled-is-must-and-what-happens)
 
-- opentelemetry, gofuzz, pprof, Delve, GDB, go vet staticcheck
+- opentelemetry, gofuzz, Delve, GDB, go vet staticcheck
 
 - channel buffered
 
