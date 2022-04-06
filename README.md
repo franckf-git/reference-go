@@ -21,17 +21,3 @@
 ## References
 - [codes for runes](https://en.wikipedia.org/wiki/ASCII#Printable_characters)
 
-## tests
-
-- https://github.com/stretchr/testify
-
-- https://github.com/dgryski/go-perfbook#readme
-
-- [CGO build](https://stackoverflow.com/questions/61515186/when-using-cgo-enabled-is-must-and-what-happens)
-
-- opentelemetry, gofuzz, Delve, GDB, go vet staticcheck
-
-- channel buffered
-
-- https://github.com/mvdan/gofumpt
-
