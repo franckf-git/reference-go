@@ -5,6 +5,8 @@
 - [documentation](https://golang.org/doc/)
 - [go with tests](https://quii.gitbook.io/learn-go-with-tests/)
 - [golangdocs](https://golangdocs.com/)
+- [golangbyexample](https://golangbyexample.com/)
+- [building-web-with-go](https://github.com/astaxie/build-web-application-with-golang/blob/master/en/preface.md)
 
 ## Packages
 - [packages](https://pkg.go.dev/)
