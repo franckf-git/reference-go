@@ -36,4 +36,4 @@ func main() {
     fastSender(c, &wg)
     wg.Wait()
     log.Println(time.Since(start))
-}<Paste>
+}

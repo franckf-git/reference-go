@@ -18,7 +18,7 @@ func main() {
 	fmt.Println("Before the time is:", time.Now().Unix())
 	listcmd := []string{"one", "two", "tree"}
 
-	c := make(chan string)
+	c := make(chan string, len(listcmd))
 
 	for _, v := range listcmd {
 		go funcwhotakesometime(v, c)
@@ -26,6 +26,7 @@ func main() {
 	}
 
 	// obligé de faire une boucle pour avoir tous les messages (sinon on a que le dernier
+	// c'est surtout parce qu'on n'utilise pas de waitGroup et de close
 	result := make([]string, len(listcmd))
 	for i, _ := range result {
 		result[i] = <-c
@@ -34,4 +35,3 @@ func main() {
 
 	fmt.Println("After the time is:", time.Now().Unix())
 }
-
