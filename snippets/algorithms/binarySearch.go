@@ -40,3 +40,22 @@ func binarySearch2(numbers []int, search int) int {
 		return binarySearch2(righ, search) + midIndex + 1
 	}
 }
+
+// binarySearch(numbers, 0, len(numbers)-1, numberToFind)
+func binarySearchOther(numbers []int, leftBound, rightBound, numberToFind int) int {
+	if rightBound >= leftBound {
+		midPoint := leftBound + (rightBound-leftBound)/2
+
+		if numbers[midPoint] == numberToFind {
+			return midPoint
+		}
+
+		if numbers[midPoint] > numberToFind {
+			return binarySearch(numbers, leftBound, midPoint-1, numberToFind)
+		}
+
+		return binarySearch(numbers, midPoint+1, rightBound, numberToFind)
+	}
+
+	return -1
+}
