@@ -1,5 +1,7 @@
 package main
 
+import "sort"
+
 func bubbleSort(datas []int) []int {
 	datasLen := len(datas)
 	for i := 0; i < datasLen; i++ {
@@ -94,6 +96,22 @@ func bubbleSortInterface(x sort.Interface) {
 		for i := 1; i < n; i++ {
 			if x.Less(i, i-1) {
 				x.Swap(i, i-1)
+				swapped = true
+			}
+		}
+		if !swapped {
+			return
+		}
+	}
+}
+
+func bubbleSortGeneric[T constraints.Ordered](x []T) {
+	n := len(x)
+	for {
+		swapped := false
+		for i := 1; i < n; i++ {
+			if x[i] < x[i-1] {
+				x[i-1], x[i] = x[i], x[i-1]
 				swapped = true
 			}
 		}
