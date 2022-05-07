@@ -79,3 +79,26 @@ func swapString(words []string) {
 		word2++
 	}
 }
+
+/*
+ * type Interface interface {
+ * Len() int
+ * Less(i, j int) bool
+ * Swap(i, j int)
+ * }
+ */
+func bubbleSortInterface(x sort.Interface) {
+	n := x.Len()
+	for {
+		swapped := false
+		for i := 1; i < n; i++ {
+			if x.Less(i, i-1) {
+				x.Swap(i, i-1)
+				swapped = true
+			}
+		}
+		if !swapped {
+			return
+		}
+	}
+}
