@@ -10,7 +10,7 @@
 
 ## Packages
 - [packages](https://pkg.go.dev/)
-- [awesome-go](https://github.com/avelino/awesome-go)
+- [awesome-go](https://awesome-go.com/)
 
 ## Bests Practices
 - [gobest-2016](https://peter.bourgon.org/go-best-practices-2016/#conclusion)
