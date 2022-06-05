@@ -15,7 +15,7 @@ fmt.Println(res)
 
 - https://www.elastic.co/fr/blog/the-go-client-for-elasticsearch-working-with-data
 
-- https://pkg.go.dev/github.com/elastic/go-elasticsearch/v7@v7.8.0/estransport?tab=doc#CurlLogger
++ https://pkg.go.dev/github.com/elastic/go-elasticsearch/v7@v7.8.0/estransport?tab=doc#CurlLogger
 
 - Set the EnableMetrics option to true, and use the Metrics() method to retrieve the information. The examples/instrumentation/expvar.go example shows an integration with the expvar package.
 
