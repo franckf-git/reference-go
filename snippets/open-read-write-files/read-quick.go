@@ -2,14 +2,14 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
+	"os"
 )
 
 func main() {
-	bs, err := ioutil.ReadFile("test.txt")
+	const fileName = "test.txt"
+	fileContents, err := os.ReadFile(fileName)
 	if err != nil {
 		return
 	}
-	str := string(bs)
-	fmt.Println(str)
+	fmt.Printf("%s\n", fileContents)
 }
