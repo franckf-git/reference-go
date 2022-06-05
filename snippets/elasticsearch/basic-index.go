@@ -33,7 +33,7 @@ func main() {
 	}
 
 	for i, v := range []string{"test 1", "test 2"} {
-		data, _ := json.Marshal(struct{ Title string }{Title: v})
+		data, _ := json.Marshal(struct{ Title string }{Title: v}) // keep field in Uppercase
 		req := esapi.IndexRequest{
 			Index:      "test_part_1",
 			DocumentID: strconv.Itoa(i + 1),
