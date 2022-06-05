@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"io/ioutil"
 	"log"
 	"os"
@@ -30,7 +31,15 @@ func main() {
 	if err != nil {
 		log.Fatalf("Error reading response: %s", err)
 	}
-	res.Body.Close()
+	defer res.Body.Close()
+
+	var r map[string]interface{}
+	err = json.NewDecoder(res.Body).Decode(&r)
+	if err != nil {
+		log.Fatalf("Error decoding response: %s", err)
+	}
+	log.Printf("version: %#+v\n", r["version"])
+	log.Printf("version-number: %#+v\n", r["version"].(map[string]interface{})["number"])
 
 	log.Println(res)
 }
