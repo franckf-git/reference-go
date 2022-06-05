@@ -20,12 +20,12 @@ func main() {
 		CACert:            cert,
 	}
 
-	// curl -v --cacert ca.crt https://elastic:3lastic@localhost:9200
 	es, err := elasticsearch.NewClient(cfg)
 	if err != nil {
 		log.Fatalf("Error creating the client: %s", err)
 	}
 
+	// curl -v --cacert ca.crt https://elastic:3lastic@localhost:9200
 	res, err := es.Info()
 	if err != nil {
 		log.Fatalf("Error reading response: %s", err)
