@@ -17,7 +17,7 @@ fmt.Println(res)
 
 + https://pkg.go.dev/github.com/elastic/go-elasticsearch/v7@v7.8.0/estransport?tab=doc#CurlLogger
 
-- Set the EnableMetrics option to true, and use the Metrics() method to retrieve the information. The examples/instrumentation/expvar.go example shows an integration with the expvar package.
++ Set the EnableMetrics option to true, and use the Metrics() method to retrieve the information. The examples/instrumentation/expvar.go example shows an integration with the expvar package.
 
 - tidwall/gjson package. It allows you to use the "dot notation" — familiar from the jq command line utility — to "pluck" the values from the response easily, as well as more efficiently:
 

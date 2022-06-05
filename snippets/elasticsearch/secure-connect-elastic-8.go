@@ -18,6 +18,7 @@ func main() {
 		Username:          "elastic",
 		Password:          "3lastic",
 		EnableDebugLogger: true,
+		EnableMetrics:     true,
 		CACert:            cert,
 	}
 
@@ -42,4 +43,6 @@ func main() {
 	log.Printf("version-number: %#+v\n", r["version"].(map[string]interface{})["number"])
 
 	log.Println(res)
+	metr, _ := es.Metrics()
+	log.Printf("es.Metrics(): %#+v\n", metr)
 }
