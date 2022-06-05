@@ -1,6 +1,6 @@
 - Empirically, JSON encoding and decoding has the biggest influence on the performance of the client
 
-- https://pkg.go.dev/github.com/elastic/go-elasticsearch/v7/esutil#NewJSONReader
++ https://pkg.go.dev/github.com/elastic/go-elasticsearch/v7/esutil#NewJSONReader
 ```
 type MyDocument struct {
   Title string `json:"title"`
