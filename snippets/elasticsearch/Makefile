@@ -9,3 +9,6 @@ down:
 
 del:
 	sudo podman-compose -f 1-node.yml down -v
+
+getca:
+	sudo podman cp elasticsearch_es01_1:/usr/share/elasticsearch/config/certs/ca/ca.crt .
