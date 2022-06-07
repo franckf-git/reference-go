@@ -1,3 +1,4 @@
 .env
 go-elasticsearch-main
 *.crt
+abc.csv
