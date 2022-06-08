@@ -80,12 +80,19 @@ func processBatch(es *elasticsearch.Client, batch [][]string) {
 	end = append(end, "\n"...)
 
 	for _, v := range batch {
-		buf.Write([]byte(`{ "index": {} }`))
+		// a completer
+		buf.WriteString(`{ "index": { "_id":"` + v[0] + `"} }`)
 		buf.Write(end)
-		buf.Write([]byte(`{`))
-		buf.Write([]byte(`"data":"`))
-		buf.Write([]byte(v[0]))
-		buf.Write([]byte(`"}`))
+		buf.WriteString(`{`)
+		buf.WriteString(`"a":"`)
+		buf.WriteString(v[0])
+		buf.WriteString(`",`)
+		buf.WriteString(`"b":"`)
+		buf.WriteString(v[1])
+		buf.WriteString(`",`)
+		buf.WriteString(`"c":"`)
+		buf.WriteString(v[2])
+		buf.WriteString(`"}`)
 		buf.Write(end)
 	}
 
@@ -103,6 +110,6 @@ func processBatch(es *elasticsearch.Client, batch [][]string) {
 			raw["error"].(map[string]interface{})["reason"],
 		)
 	}
-	log.Println(raw["items"])
+	log.Println("First document of each batch: ", raw["items"].([]interface{})[0])
 	res.Body.Close()
 }
