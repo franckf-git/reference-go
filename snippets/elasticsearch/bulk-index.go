@@ -9,15 +9,18 @@ import (
 	"io/ioutil"
 	"log"
 	"os"
+	"strconv"
 
 	"github.com/elastic/go-elasticsearch/v8"
 )
 
 var (
-	fileName   string
-	count      int
-	batchSize  int        = 15
-	batchLines [][]string = make([][]string, batchSize)
+	fileName    string
+	count       int
+	batchNumber int
+	batchSize   int        = 15
+	batchLines  [][]string = make([][]string, batchSize)
+	header      []string
 )
 
 func init() {
@@ -53,7 +56,6 @@ func main() {
 }
 
 func readFile(es *elasticsearch.Client, file io.ReadWriter) {
-	// miss extract header and ignore it from batch
 	csvReader := csv.NewReader(file)
 	for {
 		record, err := csvReader.Read()
@@ -74,23 +76,27 @@ func readFile(es *elasticsearch.Client, file io.ReadWriter) {
 }
 
 func processBatch(es *elasticsearch.Client, batch [][]string) {
+	if batchNumber == 0 {
+		header = batch[0]
+		batch = batch[1:]
+	}
+
 	var buf bytes.Buffer
 
 	end := []byte("")
 	end = append(end, "\n"...)
 
-	for _, v := range batch {
-		// a completer
-		buf.WriteString(`{ "index": { "_id":"` + v[0] + `"} }`)
+	for i, v := range batch {
+		buf.WriteString(`{ "index": { "_id":"` + strconv.Itoa(batchNumber) + `-` + strconv.Itoa(i) + `"}`)
 		buf.Write(end)
 		buf.WriteString(`{`)
-		buf.WriteString(`"a":"`)
-		buf.WriteString(v[0])
+		buf.WriteString(`"` + header[0] + `":"`)
+		buf.WriteString(v[0]) // convert to int + bufWriteInt ?
 		buf.WriteString(`",`)
-		buf.WriteString(`"b":"`)
+		buf.WriteString(`"` + header[1] + `":"`)
 		buf.WriteString(v[1])
 		buf.WriteString(`",`)
-		buf.WriteString(`"c":"`)
+		buf.WriteString(`"` + header[2] + `":"`)
 		buf.WriteString(v[2])
 		buf.WriteString(`"}`)
 		buf.Write(end)
@@ -110,6 +116,8 @@ func processBatch(es *elasticsearch.Client, batch [][]string) {
 			raw["error"].(map[string]interface{})["reason"],
 		)
 	}
-	log.Println("First document of each batch: ", raw["items"].([]interface{})[0])
+
+	log.Println("First document of batch ", batchNumber, " : ", raw["items"].([]interface{})[0])
 	res.Body.Close()
+	batchNumber++
 }
