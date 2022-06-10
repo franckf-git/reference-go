@@ -10,6 +10,7 @@ import (
 	"log"
 	"os"
 	"strconv"
+	"time"
 
 	"github.com/elastic/go-elasticsearch/v8"
 )
@@ -32,6 +33,7 @@ func init() {
 // for a more complete version
 // this is basic
 func main() {
+	start := time.Now().UTC()
 	file, err := os.Open(fileName)
 	if err != nil {
 		log.Fatalln(err)
@@ -53,6 +55,8 @@ func main() {
 	}
 
 	readFile(es, file)
+	dur := time.Since(start)
+	log.Printf("time.Since(start): %v\n", dur) // 1.854754855s
 }
 
 func readFile(es *elasticsearch.Client, file io.ReadWriter) {
@@ -91,7 +95,7 @@ func processBatch(es *elasticsearch.Client, batch [][]string) {
 		buf.Write(end)
 		buf.WriteString(`{`)
 		buf.WriteString(`"` + header[0] + `":"`)
-		buf.WriteString(v[0]) // convert to int + bufWriteInt ?
+		buf.WriteString(v[0])
 		buf.WriteString(`",`)
 		buf.WriteString(`"` + header[1] + `":"`)
 		buf.WriteString(v[1])
