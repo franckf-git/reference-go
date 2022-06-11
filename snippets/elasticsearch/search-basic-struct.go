@@ -12,6 +12,8 @@ import (
 	"github.com/elastic/go-elasticsearch/v8"
 )
 
+// https://pkg.go.dev/github.com/elastic/go-elasticsearch/v8@v8.2.0/esapi#Search.WithBody
+
 type requestQuery struct {
 	Query query `json:"query"`
 }
