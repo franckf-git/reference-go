@@ -95,49 +95,50 @@ func readFile(es esutil.BulkIndexer, file io.ReadWriter) {
 		}
 		if count == 0 {
 			header = record
-		} else { // ugly else but don't find another way to skip header - 'continue' don't make it with infinite loop
+			count++
+			continue
+		}
 
-			var buf bytes.Buffer
-			buf.WriteString(`{`)
-			buf.WriteString(`"` + header[0] + `":"`)
-			buf.WriteString(record[0])
-			buf.WriteString(`",`)
-			buf.WriteString(`"` + header[1] + `":"`)
-			buf.WriteString(record[1])
-			buf.WriteString(`",`)
-			buf.WriteString(`"` + header[2] + `":"`)
-			buf.WriteString(record[2])
-			buf.WriteString(`"}`)
+		var buf bytes.Buffer
+		buf.WriteString(`{`)
+		buf.WriteString(`"` + header[0] + `":"`)
+		buf.WriteString(record[0])
+		buf.WriteString(`",`)
+		buf.WriteString(`"` + header[1] + `":"`)
+		buf.WriteString(record[1])
+		buf.WriteString(`",`)
+		buf.WriteString(`"` + header[2] + `":"`)
+		buf.WriteString(record[2])
+		buf.WriteString(`"}`)
 
-			err = es.Add(
-				context.Background(),
-				esutil.BulkIndexerItem{
-					Action:     "index",
-					DocumentID: "batch-0-numInBatch-" + strconv.Itoa(count),
-					Body:       bytes.NewReader(buf.Bytes()),
-					OnSuccess: func(
-						ctx context.Context,
-						item esutil.BulkIndexerItem,
-						res esutil.BulkIndexerResponseItem,
-					) {
-						log.Printf("[%d] %s test/%s", res.Status, res.Result, item.DocumentID)
-					},
-					OnFailure: func(
-						ctx context.Context,
-						item esutil.BulkIndexerItem,
-						res esutil.BulkIndexerResponseItem,
-						err error) {
-						if err != nil {
-							log.Printf("ERROR: %s", err)
-						} else {
-							log.Printf("ERROR: %s: %s", res.Error.Type, res.Error.Reason)
-						}
-					},
+		err = es.Add(
+			context.Background(),
+			esutil.BulkIndexerItem{
+				Action:     "index",
+				DocumentID: "batch-0-numInBatch-" + strconv.Itoa(count),
+				Body:       bytes.NewReader(buf.Bytes()),
+				OnSuccess: func(
+					ctx context.Context,
+					item esutil.BulkIndexerItem,
+					res esutil.BulkIndexerResponseItem,
+				) {
+					log.Printf("[%d] %s test/%s", res.Status, res.Result, item.DocumentID)
 				},
-			)
-			if err != nil {
-				log.Fatalf("Unexpected error: %s", err)
-			}
+				OnFailure: func(
+					ctx context.Context,
+					item esutil.BulkIndexerItem,
+					res esutil.BulkIndexerResponseItem,
+					err error) {
+					if err != nil {
+						log.Printf("ERROR: %s", err)
+					} else {
+						log.Printf("ERROR: %s: %s", res.Error.Type, res.Error.Reason)
+					}
+				},
+			},
+		)
+		if err != nil {
+			log.Fatalf("Unexpected error: %s", err)
 		}
 		count++
 	}
