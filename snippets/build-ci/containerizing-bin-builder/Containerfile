@@ -1,11 +1,12 @@
-FROM golang:alpine AS builder
-RUN mkdir /app
-ADD . /app
+# Build stage
+FROM golang:1.16-alpine3.13 AS builder
 WORKDIR /app
-# RUN go mod download # if modules
+COPY . .
 RUN go build -o main main.go
 
-FROM alpine
-COPY --from=builder /app /app
+# Run stage
+FROM alpine:3.13
 WORKDIR /app
-CMD ["./main"]
+COPY --from=builder /app/main .
+EXPOSE 8081
+CMD ["/app/main"]
