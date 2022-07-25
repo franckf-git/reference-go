@@ -28,6 +28,21 @@ func TestTriForce5(t *testing.T) {
 	}
 }
 
+func TestTriForce7(t *testing.T) {
+	expected := `
+       ▲
+      ▲▲▲
+     ▲▲▲▲▲
+    ▲▲▲▲▲▲▲
+   ▲       ▲
+  ▲▲▲     ▲▲▲
+ ▲▲▲▲▲   ▲▲▲▲▲
+▲▲▲▲▲▲▲ ▲▲▲▲▲▲▲
+`
+	if printTriforce(7) != expected {
+		t.Error("Bad result for 7")
+	}
+}
 func TestTriForce4(t *testing.T) {
 	expected := `cannot use even number - only odd`
 	if printTriforce(4) != expected {
