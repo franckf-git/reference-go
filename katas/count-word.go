@@ -8,6 +8,7 @@ import (
 	"os"
 	"regexp"
 	"strings"
+	"unicode/utf8"
 )
 
 func main() {
@@ -97,7 +98,7 @@ func visualize(datas []Counter) {
 	fmt.Print("+", "--", strings.Repeat("-", biggerSize), "--", "+", "-------", "+", "\n")
 	fmt.Print("+ ", "word", strings.Repeat(" ", biggerSize-2), " + ", "count", " +", "\n")
 	for _, data := range datas {
-		fmt.Print("+ ", data.word, strings.Repeat(" ", biggerSize-len(data.word)), "   +   ", data.count, "   +", "\n")
+		fmt.Print("+ ", data.word, strings.Repeat(" ", biggerSize-utf8.RuneCountInString(data.word)), "   +   ", data.count, "   +", "\n")
 	}
 	fmt.Print("+", "--", strings.Repeat("-", biggerSize), "--", "+", "-------", "+", "\n")
 }
