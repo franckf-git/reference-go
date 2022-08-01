@@ -1,6 +1,7 @@
 package katas
 
 import (
+	"fmt"
 	"testing"
 )
 
@@ -10,38 +11,22 @@ func Test_num2rom(t *testing.T) {
 		wantRoman string
 	}{
 		{1, "I"},
-		{10, "X"},
-		{100, "C"},
-		{1000, "M"},
-		{1006, "MVI"},
-		{14, "XIV"},
-		{18, "XVIII"},
-		{1984, "MCMLXXXIV"},
 		{2, "II"},
-		{20, "XX"},
-		{2014, "MMXIV"},
 		{3, "III"},
-		{39, "XXXIX"},
-		{3999, "MMMCMXCIX"},
 		{4, "IV"},
-		{40, "XL"},
-		{400, "CD"},
-		{47, "XLVII"},
-		{49, "XLIX"},
 		{5, "V"},
-		{50, "L"},
-		{500, "D"},
 		{6, "VI"},
-		{69, "LXIX"},
 		{7, "VII"},
-		{798, "DCCXCVIII"},
 		{8, "VIII"},
 		{9, "IX"},
-		{90, "XC"},
-		{900, "CM"},
+		{10, "X"},
+		{14, "XIV"},
+		{18, "XVIII"},
+		{20, "XX"},
+		{39, "XXXIX"},
 	}
 	for _, tt := range tests {
-		t.Run("", func(t *testing.T) {
+		t.Run(fmt.Sprint(tt.inNum), func(t *testing.T) {
 			if gotRoman := num2rom(tt.inNum); gotRoman != tt.wantRoman {
 				t.Errorf("num2rom() = %v, want %v", gotRoman, tt.wantRoman)
 			}
