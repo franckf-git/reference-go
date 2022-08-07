@@ -24,6 +24,10 @@ func Test_num2rom(t *testing.T) {
 		{18, "XVIII"},
 		{20, "XX"},
 		{39, "XXXIX"},
+		{40, "XL"},
+		{47, "XLVII"},
+		{49, "XLIX"},
+		{50, "L"},
 	}
 	for _, tt := range tests {
 		t.Run(fmt.Sprint(tt.inNum), func(t *testing.T) {
