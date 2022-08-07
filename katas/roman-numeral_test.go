@@ -52,13 +52,20 @@ func Test_num2rom(t *testing.T) {
 
 func Test_rom2num(t *testing.T) {
 	tests := []struct {
-		inRoman string
 		wantNum int
+		inRoman string
 	}{
-		{"I", 1},
+		{1, "I"},
+		{2, "II"},
+		{3, "III"},
+		{4, "IV"},
+		{5, "V"},
+		{6, "VI"},
+		{7, "VII"},
+		{8, "VIII"},
 	}
 	for _, tt := range tests {
-		t.Run("", func(t *testing.T) {
+		t.Run(fmt.Sprint(tt.inRoman), func(t *testing.T) {
 			if gotNum := rom2num(tt.inRoman); gotNum != tt.wantNum {
 				t.Errorf("num2rom() = %v, want %v", gotNum, tt.wantNum)
 			}

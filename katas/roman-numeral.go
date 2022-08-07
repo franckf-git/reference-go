@@ -41,6 +41,22 @@ func num2rom(number int) (roman string) {
 }
 
 func rom2num(roman string) (number int) {
-	number = 1
+	arrRoman := strings.Split(roman, "")
+	var arrRomanRev = make([]string, 0)
+	for i := len(arrRoman) - 1; i >= 0; i-- {
+		arrRomanRev = append(arrRomanRev, arrRoman[i])
+	}
+
+	for i, v := range arrRomanRev {
+		switch {
+		case v == "V":
+			number += 5
+		case v == "V" && arrRomanRev[i+1] == "I":
+			number--
+		}
+		if v == "I" {
+			number++
+		}
+	}
 	return
 }
