@@ -1,35 +1,34 @@
 package katas
 
 import (
-	"fmt"
 	"strings"
 )
 
 func num2rom(number int) (roman string) {
 	var result strings.Builder
 
-	// X
-	if number >= 10 {
-		result.WriteString("X")
-		number = number - 10
-	}
-	if fmt.Sprint(number)[len(fmt.Sprint(number))-1:] == "9" {
-		result.WriteString("IX")
-		number = number - 9
-	}
-	// V
-	if number >= 5 {
-		result.WriteString("V")
-		number = number - 5
-	}
-	if fmt.Sprint(number)[len(fmt.Sprint(number))-1:] == "4" {
-		result.WriteString("IV")
-		number = number - 4
-		print(number)
-	}
+	for number > 0 {
+		switch {
+		case number > 9:
+			result.WriteString("X")
+			number -= 10
 
-	for i := 0; i < number; i++ {
-		result.WriteString("I")
+		case number > 8:
+			result.WriteString("IX")
+			number -= 9
+
+		case number > 4:
+			result.WriteString("V")
+			number -= 5
+
+		case number > 3:
+			result.WriteString("IV")
+			number -= 4
+
+		default:
+			result.WriteString("I")
+			number--
+		}
 	}
 
 	roman = result.String()
