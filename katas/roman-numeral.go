@@ -56,11 +56,22 @@ func rom2num(roman string) (number int) {
 				break
 			}
 		}
+		// si avant dernier X - Start to be ugly
+		if arrRoman[i] == "X" && i+1 <= len(arrRoman)-1 {
+			// et si dernier L > donc XL - on finit sur plus 40
+			if arrRoman[i+1] == "L" {
+				number += 40
+				break
+			}
+		}
 		if arrRoman[i] == "V" {
 			number += 4
 		}
 		if arrRoman[i] == "X" {
 			number += 9
+		}
+		if arrRoman[i] == "L" {
+			number += 49
 		}
 		number++
 	}
