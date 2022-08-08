@@ -42,21 +42,46 @@ func num2rom(number int) (roman string) {
 
 func rom2num(roman string) (number int) {
 	arrRoman := strings.Split(roman, "")
-	var arrRomanRev = make([]string, 0)
-	for i := len(arrRoman) - 1; i >= 0; i-- {
-		arrRomanRev = append(arrRomanRev, arrRoman[i])
+	for i := 0; i < len(arrRoman); i++ {
+		// si avant dernier I
+		if arrRoman[i] == "I" && i+1 == len(arrRoman)-1 {
+			// et si dernier V > donc IV - on finit sur plus 4
+			if arrRoman[i+1] == "V" {
+				number += 4
+				break
+			}
+			// et si dernier X > donc IX - on finit sur plus 9
+			if arrRoman[i+1] == "X" {
+				number += 9
+				break
+			}
+		}
+		if arrRoman[i] == "V" {
+			number += 4
+		}
+		if arrRoman[i] == "X" {
+			number += 9
+		}
+		number++
 	}
 
-	for i, v := range arrRomanRev {
-		switch {
-		case v == "V":
-			number += 5
-		case v == "V" && arrRomanRev[i+1] == "I":
-			number--
+	/*
+		var arrRomanRev = make([]string, 0)
+		for i := len(arrRoman) - 1; i >= 0; i-- {
+			arrRomanRev = append(arrRomanRev, arrRoman[i])
 		}
-		if v == "I" {
-			number++
+
+		for i, v := range arrRomanRev {
+			switch {
+			case v == "V" && arrRomanRev[i+1] == "I":
+				number += 4
+			case v == "V":
+				number += 5
+			}
+			if v == "I" {
+				number++
+			}
 		}
-	}
+	*/
 	return
 }

@@ -52,7 +52,7 @@ func Test_num2rom(t *testing.T) {
 }
 
 func Test_rom2num(t *testing.T) {
-	for _, tt := range tests[:5] {
+	for _, tt := range tests[:15] {
 		t.Run(fmt.Sprint(tt.Roman), func(t *testing.T) {
 			if gotNum := rom2num(tt.Roman); gotNum != tt.Num {
 				t.Errorf("num2rom() = %v, want %v", gotNum, tt.Num)
