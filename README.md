@@ -21,5 +21,5 @@
 - [rob proverbs](http://go-proverbs.github.io/)
 
 ## References
-- [codes for runes](https://en.wikipedia.org/wiki/ASCII#Printable_characters)
+- [codes for string (runes=unicode,bytes=utf-8)](https://www.utf8-chartable.de/)
 
