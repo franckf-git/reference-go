@@ -113,3 +113,16 @@ func reverseBatchMiddle(input []int) {
 
 	wg.Wait()
 }
+
+func reverseDefer(input string) (output string) {
+	var outputBuilder strings.Builder
+	defer func() {
+	output = outputBuilder.String()
+	}()
+	for _, r := range input {
+		defer func(r rune) {
+			outputBuilder.WriteRune(r)
+		}(r)
+	}
+	return
+}
