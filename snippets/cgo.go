@@ -1,12 +1,18 @@
 package main
 
 /*
-#include <stdlib.h>
 #include <time.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+void myprint(char* s) {
+	printf("%s\n", s);
+}
 */
 import "C"
 
 import (
+	"unsafe"
 	"fmt"
 )
 
@@ -20,6 +26,8 @@ func main() {
 		rand := random()
 		fmt.Println(rand)
 	}
+
+	hello()
 }
 
 func random() int {
@@ -28,4 +36,10 @@ func random() int {
 
 func seed(i int) {
 	C.srand(C.uint(i))
+}
+
+func hello() {
+	cs := C.CString("Hello from stdio\n")
+	C.myprint(cs)
+	C.free(unsafe.Pointer(cs))
 }
